@@ -42,7 +42,7 @@
             <category term="writeup" scheme="https://0xd009.github.io/categories/re/writeup/" />
             <category term="obfuscation" scheme="https://0xd009.github.io/tags/obfuscation/" />
             <pubDate>Fri, 02 Dec 2022 21:39:16 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: !!flag{0bfu5er}！！&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: !! flag{0bfu5er}！！&lt;/p&gt;
 &lt;p&gt;本以为是 ollvm 一类的混淆，事实上只是自己把一些运算函数复杂化了&lt;br /&gt;
 &lt;img data-src=&#34;img-1.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
 随便看一下，然后动调跟一下，把逻辑理清楚：&lt;/p&gt;
