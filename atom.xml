@@ -11,10 +11,13 @@
     <updated>2022-12-02T13:39:16.000Z</updated>
     <category term="CTFer" />
     <entry>
-        <id>https://0xd009.github.io/buu-ACTF-SplendidMinecraft-md/</id>
+        <id>https://0xd009.github.io/buu-ACTF-SplendidMinecraft/</id>
         <title>buu-ACTF-SplendidMinecraft.md</title>
-        <link rel="alternate" href="https://0xd009.github.io/buu-ACTF-SplendidMinecraft-md/"/>
-        <content type="html">&lt;p&gt;首先做了一个格式合法性检验，然后用 strtok 沿 &lt;code&gt;_&lt;/code&gt; 切片，第一次要第一个变量，后面不用加，会输出第一次调用得到的其它切边&lt;/p&gt;
+        <link rel="alternate" href="https://0xd009.github.io/buu-ACTF-SplendidMinecraft/"/>
+        <content type="html">&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTglODclQUElRTQlQkYlQUUlRTYlOTQlQjklRTQlQkIlQTMlRTclQTAlODEvMTIxODcwMj9mcj1hbGFkZGlu&#34;&gt;smc (自修改)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;看一眼&lt;br /&gt;
+&lt;img data-src=&#34;buu-ACTF-SplendidMinecraft/Pastedimage20221027002112.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;首先做了一个格式合法性检验，然后用 strtok 沿 &lt;code&gt;_&lt;/code&gt; 切片，第一次要第一个变量，后面不用加，会输出第一次调用得到的其它切边&lt;/p&gt;
 &lt;p&gt;然后是 unk_4050D8 实际上是一个函数，被混淆到还原不出来了，本来想继续静态看，后来还是放弃改用动调了&lt;/p&gt;
 &lt;p&gt;可以看到 byte_405018+256 那个地方应该也是函数，然而这个异或值居然是前六位的异或值，所以必须拿到前六位才好&lt;/p&gt;
 &lt;p&gt;动调过程中就看到有比对得到前六位： &lt;code&gt;yOu0y*&lt;/code&gt; &lt;br /&gt;
