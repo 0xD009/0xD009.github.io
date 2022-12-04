@@ -35,10 +35,7 @@
         <id>https://0xd009.github.io/buu%20Baby%20Obfuscation/</id>
         <title>buu Baby Obfuscation</title>
         <link rel="alternate" href="https://0xd009.github.io/buu%20Baby%20Obfuscation/"/>
-        <content type="html">&lt;p&gt;flag: !! flag{0bfu5er}！！&lt;/p&gt;
-&lt;p&gt;!! 黑幕黑幕黑幕黑幕黑幕黑幕！！&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;label danger&#34;&gt;💔danger&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;本以为是 ollvm 一类的混淆，事实上只是自己把一些运算函数复杂化了&lt;br /&gt;
+        <content type="html">&lt;p&gt;本以为是 ollvm 一类的混淆，事实上只是自己把一些运算函数复杂化了&lt;br /&gt;
 &lt;img data-src=&#34;img-1.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
 随便看一下，然后动调跟一下，把逻辑理清楚：&lt;/p&gt;
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin&#34;&gt;str&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-=&lt;/span&gt; v31&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin&#34;&gt;str&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; v31&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin&#34;&gt;str&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin&#34;&gt;str&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;下面是脚本：&lt;/p&gt;
