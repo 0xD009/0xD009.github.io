@@ -11,9 +11,9 @@
     <updated>2022-12-04T14:19:04.000Z</updated>
     <category term="CTFer" />
     <entry>
-        <id>https://0xd009.github.io/buu-BPUCTF-BasicASM/</id>
+        <id>https://0xd009.github.io/buu%20BPUCTF%20BasicASM/</id>
         <title>buu BPUCTF BasicASM</title>
-        <link rel="alternate" href="https://0xd009.github.io/buu-BPUCTF-BasicASM/"/>
+        <link rel="alternate" href="https://0xd009.github.io/buu%20BPUCTF%20BasicASM/"/>
         <content type="html">&lt;p&gt;给的是.s 文件，vscode 打开发现是纯汇编，而且不可编译&lt;br /&gt;
 看了一下感觉比较烦躁，懒得再看了&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;00007FF7A8AC5A50  push        rbp  
