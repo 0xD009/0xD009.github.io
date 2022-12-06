@@ -10,9 +10,811 @@
         </author>
         <description>施工ing...</description>
         <language>zh-CN</language>
-        <pubDate>Sun, 04 Dec 2022 22:19:04 +0800</pubDate>
-        <lastBuildDate>Sun, 04 Dec 2022 22:19:04 +0800</lastBuildDate>
+        <pubDate>Tue, 06 Dec 2022 20:54:18 +0800</pubDate>
+        <lastBuildDate>Tue, 06 Dec 2022 20:54:18 +0800</lastBuildDate>
         <category term="CTFer" />
+        <item>
+            <guid isPermalink="true">https://0xd009.github.io/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/</guid>
+            <title>哈夫曼编码</title>
+            <link>https://0xd009.github.io/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/</link>
+            <category term="Data Structure" scheme="https://0xd009.github.io/categories/Data-Structure/" />
+            <category term="Tree" scheme="https://0xd009.github.io/tags/Tree/" />
+            <pubDate>Tue, 06 Dec 2022 20:54:18 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;实验内容概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实验内容概述&#34;&gt;#&lt;/a&gt; 实验内容概述&lt;/h2&gt;
+&lt;p&gt;对全英小写的文本文件进行哈夫曼编码，并将每个字符的编码值写入文件&lt;/p&gt;
+&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实现思路&#34;&gt;#&lt;/a&gt; 实现思路&lt;/h2&gt;
+&lt;p&gt;基本已经被老师讲的七七八八了，而且书上有很全的代码，我们只需要实现一些细枝末节&lt;/p&gt;
+&lt;h3 id=&#34;需要考虑的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#需要考虑的问题&#34;&gt;#&lt;/a&gt; 需要考虑的问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;文件读写&lt;/li&gt;
+&lt;li&gt;怎样每次找到权值最小的两个结点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;解决方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方法&#34;&gt;#&lt;/a&gt; 解决方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;见 &lt;code&gt;read_message()&lt;/code&gt; 、 &lt;code&gt;write_in()&lt;/code&gt;  函数&lt;/li&gt;
+&lt;li&gt;见 &lt;code&gt;select()&lt;/code&gt;  函数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;其他设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其他设计&#34;&gt;#&lt;/a&gt; 其他设计&lt;/h3&gt;
+&lt;p&gt;我们通过 &lt;code&gt;match_weight_and_char()&lt;/code&gt;  函数来得到每个字符的权值&lt;/p&gt;
+&lt;h2 id=&#34;源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码&#34;&gt;#&lt;/a&gt; 源码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;#include&amp;lt;stdio.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+#include&amp;lt;string.h&amp;gt;
+
+#define MAXSIZE 1000
+#define N 26
+
+typedef int WeightType;
+
+typedef struct Stack&amp;#123;
+    char elem[MAXSIZE];
+    int length;
+&amp;#125;Stack;
+
+typedef struct HuffTree&amp;#123;
+    int leftchild, rightchild, parent;
+    WeightType weight;
+&amp;#125;HuffTree;
+
+const char letters[] = &amp;quot;#abcdefghijklmnopqrstuvwxyz&amp;quot;;
+
+void stack_init(Stack* stack); //栈初始化
+void push(Stack* stack, int value); //压栈
+void pop(Stack *stack); //弹栈
+char *read_message(const char *filename); //读取整个文件
+void match_weight_with_char(char *text, WeightType *weight); //得到字符的权重
+void select(HuffTree *tree, int n, int i, int &amp;amp;s1, int &amp;amp;s2); //选出权重最小的两个结点
+void hufftree_init(HuffTree *tree, WeightType *weight, int n); //哈夫曼树初始化
+void coding(HuffTree *tree, char **code, int root, Stack *stack); //转码
+void huffman_coding(HuffTree *tree, char **code, int n); //转码的壳
+void write_in(const char * filename, char **code); //写进文件里
+
+int main() &amp;#123;
+    char *text = read_message(&amp;quot;t1.txt&amp;quot;);
+    WeightType weight[N + 1] = &amp;#123;0&amp;#125;;
+    match_weight_with_char(text, weight);
+
+    HuffTree *tree = (HuffTree *)malloc(sizeof(HuffTree) * 2 * N);
+    hufftree_init(tree, weight, N);
+
+    char **code = (char **)malloc(sizeof(char *) * (N + 1));
+    huffman_coding(tree, code, N);
+
+    write_in(&amp;quot;t2.txt&amp;quot;, code);
+
+    // huffman_encode(&amp;quot;test1.txt&amp;quot;, &amp;quot;test3.txt&amp;quot;, list, code);
+    // huffman_decode(&amp;quot;test3.txt&amp;quot;, &amp;quot;test4.txt&amp;quot;, tree, n, list);
+
+    for (int i = 1; i &amp;lt;= N; i ++ ) printf(&amp;quot;%c %d %s\n&amp;quot;, letters[i], weight[i], code[i]);
+
+    return 0;
+&amp;#125;
+
+void stack_init(Stack *stack) &amp;#123;
+    stack -&amp;gt; length = 0;
+&amp;#125;
+
+void push(Stack *stack, char c) &amp;#123;
+    if (stack -&amp;gt; length + 1 &amp;lt; MAXSIZE) stack -&amp;gt; elem[stack -&amp;gt; length++] = c;
+    else &amp;#123;
+        printf(&amp;quot;Stack Overflow!\n&amp;quot;);
+        exit(11111);
+    &amp;#125;
+&amp;#125;
+
+void pop(Stack *stack) &amp;#123;
+    if (stack -&amp;gt; length) stack -&amp;gt; length--;
+    else &amp;#123;
+        printf(&amp;quot;Stack Overflow!\n&amp;quot;);
+        exit(22222);
+    &amp;#125;
+&amp;#125;
+
+char *read_message(const char *filename) &amp;#123;
+	FILE *file = fopen(filename, &amp;quot;r&amp;quot;);
+	if (file == NULL) &amp;#123; //考虑鲁棒性
+		printf(&amp;quot;Invalid file!\n&amp;quot;);
+		exit(33333);
+	&amp;#125;
+	
+	fseek(file, 0, SEEK_END);
+    int len = ftell(file); //获取文章长度
+	if (len &amp;gt; MAXSIZE) &amp;#123; //同考虑鲁棒性
+		printf(&amp;quot;Overlong!\n&amp;quot;);
+		exit(44444);
+	&amp;#125;
+    char *message = (char*)malloc((len + 1) * sizeof(char)); 
+    rewind(file);  //重置指针
+    fread(message, sizeof(char), len, file);
+	message[len] = &#39;\0&#39;;
+
+	fclose(file); //别忘了
+
+	return message;
+&amp;#125;
+
+void match_weight_with_char(char *text, WeightType *weight) &amp;#123;
+    int w = 0;
+
+    for (int i = 1; i &amp;lt;= N; i ++ ) &amp;#123;
+        for (int j = 0; j &amp;lt; strlen(text); j ++ ) &amp;#123;
+            if (text[j] == letters[i]) w ++;
+        &amp;#125;
+        weight[i] = w;
+        w = 0;
+    &amp;#125;
+&amp;#125;
+
+void select(HuffTree *tree, int n, int i, int &amp;amp;s1, int &amp;amp;s2) &amp;#123;
+    int w1 = MAXSIZE, w2 = MAXSIZE;
+    for (int j = 1; j &amp;lt; i; j ++ ) &amp;#123;
+        if (tree[j].weight &amp;lt; w1 &amp;amp;&amp;amp; !tree[j].parent) &amp;#123;
+            w2 = w1; s2 = s1;
+            w1 = tree[j].weight; s1 = j;
+        &amp;#125; 
+        else if (tree[j].weight &amp;lt; w2 &amp;amp;&amp;amp; !tree[j].parent) &amp;#123;
+            w2 = tree[j].weight; s2 = j;
+        &amp;#125;
+    &amp;#125;
+&amp;#125;
+
+void hufftree_init(HuffTree *tree, WeightType *weight, int n) &amp;#123;
+    int s1, s2, m = 2 * n - 1;
+
+    for (int i = 1; i &amp;lt;= m; i ++ ) &amp;#123;
+        tree[i].weight = (i &amp;lt;= n) ? weight[i] : 0;
+        tree[i].leftchild = tree[i].rightchild = tree[i].parent = 0;
+    &amp;#125;
+
+    for (int i = n + 1; i &amp;lt;= m; i ++ ) &amp;#123;
+        select(tree, n, i, s1, s2);
+        tree[i].leftchild = s1;
+        tree[i].rightchild = s2;
+        tree[i].weight = tree[s1].weight + tree[s2].weight;
+        tree[s1].parent = tree[s2].parent = i;
+    &amp;#125;
+&amp;#125;
+
+void coding(HuffTree *tree, char **code, int root, Stack *stack) &amp;#123;
+    if (root) &amp;#123;
+        if (tree[root].leftchild == 0) &amp;#123;
+            push(stack, &#39;\0&#39;);
+            code[root]  = (char *)malloc(sizeof(char) * stack -&amp;gt; length);
+            strcpy(code[root], stack -&amp;gt; elem);
+            pop(stack);
+        &amp;#125;
+        push(stack, &#39;0&#39;);
+        coding(tree, code, tree[root].leftchild, stack);
+        pop(stack);
+        push(stack, &#39;1&#39;);
+        coding(tree, code, tree[root].rightchild, stack);
+        pop(stack);
+    &amp;#125;
+&amp;#125;
+
+void huffman_coding(HuffTree *tree, char **code, int n) &amp;#123;
+    Stack S;
+    stack_init(&amp;amp;S);
+
+    coding(tree, code, 2 * n - 1, &amp;amp;S);
+&amp;#125;
+
+void write_in(const char *filename, char **code) &amp;#123;
+    FILE *out = fopen(filename, &amp;quot;w&amp;quot;);
+
+    for (int i = 1; i &amp;lt;= N; i++) &amp;#123;
+        fwrite(letters + i, sizeof(char), 1, out);
+        fwrite(&amp;quot;   &amp;quot;, sizeof(char), 3, out);
+        fwrite(code[i], sizeof(char), strlen(code[i]), out); 
+        fwrite(&amp;quot;\n&amp;quot;, sizeof(char), 1, out);
+    &amp;#125;
+
+    fclose(out);
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;输出结果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输出结果&#34;&gt;#&lt;/a&gt; 输出结果&lt;/h2&gt;
+&lt;p&gt;下面是输入和输出：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-input&#34;&gt;aabbcvvejkajdhakhwdjawhdkahwdahjh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-output&#34;&gt;a   00
+b   1010
+c   110011
+d   011
+e   11000
+f   1100100000
+g   1100100001
+h   111
+i   1100100010
+j   100
+k   1101
+l   1100100011
+m   1100100100
+n   1100100101
+o   1100100110
+p   1100100111
+q   1100101000
+r   1100101001
+s   1100101010
+t   1100101011
+u   1100101100
+v   1011
+w   010
+x   1100101101
+y   1100101110
+z   1100101111
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://0xd009.github.io/%E6%9F%A5%E9%87%8D/</guid>
+            <title>查重</title>
+            <link>https://0xd009.github.io/%E6%9F%A5%E9%87%8D/</link>
+            <category term="Data Structure" scheme="https://0xd009.github.io/categories/Data-Structure/" />
+            <category term="String" scheme="https://0xd009.github.io/tags/String/" />
+            <pubDate>Tue, 06 Dec 2022 20:52:13 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;实验内容概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实验内容概述&#34;&gt;#&lt;/a&gt; 实验内容概述&lt;/h2&gt;
+&lt;p&gt;利用所学的字符串性质及其相关函数，求两篇英文文章的重复率&lt;/p&gt;
+&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实现思路&#34;&gt;#&lt;/a&gt; 实现思路&lt;/h2&gt;
+&lt;p&gt;读出两篇文章，存入字符串类型中，对两篇文章分句，逐句比较，然后通过一个与句子权重有关的权值求加权平均数，得到两篇文章的相似度&lt;/p&gt;
+&lt;h3 id=&#34;需要考虑的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#需要考虑的问题&#34;&gt;#&lt;/a&gt; 需要考虑的问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;文件读取，怎样防止溢出或者占用过多不必要的空间&lt;/li&gt;
+&lt;li&gt;分句以什么标准，如何操作&lt;/li&gt;
+&lt;li&gt;怎样进行两个句子的比较&lt;/li&gt;
+&lt;li&gt;怎样定义一个合理的 “相似度”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;解决方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方法&#34;&gt;#&lt;/a&gt; 解决方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;针对文件读取问题，笔者利用 &lt;code&gt;fseek&lt;/code&gt; ,  &lt;code&gt;ftell&lt;/code&gt; ,  &lt;code&gt;rewind&lt;/code&gt;  三个函数，在读取之前获得文章的长度，并重置文件指针&lt;/li&gt;
+&lt;li&gt;分句给出两段处理，首先我们有 &lt;code&gt;punc&lt;/code&gt;  数组，存放用于划分意群的字符，其他不足以划分意群的字符会存放在 &lt;code&gt;blank&lt;/code&gt;  数组中，在对句子预处理（见 &lt;code&gt;preswitch()&lt;/code&gt;  函数）时将它们删除，避免影响相似度&lt;/li&gt;
+&lt;li&gt;两个句子的比较，可以采用矩阵法，矩阵中的元素 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;a_{ij}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.716668em;vertical-align:-0.286108em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.311664em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.286108em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 代表 A 句子的第 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.65952em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 个字符是否与 B 句子的第 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;j&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.85396em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 个字符相同，然后求得这个矩阵最长的对角线（见 &lt;code&gt;longest_diag()&lt;/code&gt;  函数），作为相似字符数 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;给出如下的相似度定义：&lt;/li&gt;
+&lt;/ol&gt;
+\begin{align*}
+&amp; similarity = \frac{\sum\limits_{i \geq 1} \max\limits_{j \geq 1}\{n_{ij}\}}{weight} \\
+\\
+&amp; 其中n_{ij}指与文章A中i句子与文章B中j句子的相同字符数\\
+\\
+&amp; weight指文章M去掉所有标点剩余有效内容长度
+\end{align*}
+
+&lt;h3 id=&#34;其他设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其他设计&#34;&gt;#&lt;/a&gt; 其他设计&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;对于句子的划分，采用直接把标点置为 &lt;code&gt;\0&lt;/code&gt; （见 &lt;code&gt;split2sentences()&lt;/code&gt;  函数）的方法，这将影响程序以句子为单位遍历文章，为此笔者准备了 &lt;code&gt;shift()&lt;/code&gt;  函数专门用于处理指针的移动&lt;/li&gt;
+&lt;li&gt;对于相似字符小于等于 5 的情况，在常识下，我们不认为那是相似的，所以在 &lt;code&gt;longest_diag()&lt;/code&gt;  函数中我们的返回值为 &lt;code&gt;(res &amp;gt; 5) ? res : 0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在源码的各处设置了一些打印函数，这样有助于 &lt;code&gt;debug&lt;/code&gt; ，也方便看到程序的执行效果&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码&#34;&gt;#&lt;/a&gt; 源码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;#include&amp;lt;stdio.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+#include&amp;lt;string.h&amp;gt;
+
+#define MAXSIZE 100000
+#define SPLITNUM 5
+#define BLANKNUM 6
+
+char punc[] = &amp;#123;
+	&#39;.&#39;, &#39;?&#39;, &#39;!&#39;, &#39;;&#39;, &#39;\n&#39;
+&amp;#125;;
+char blank[] = &amp;#123;
+	&#39;\&#39;&#39;, &#39;:&#39;, &#39;,&#39;, &#39; &#39;, &#39;\&amp;quot;&#39;, &#39;-&#39;
+&amp;#125;;
+int shift(char *, int, int); //移动指针
+char *read_message(const char *, int &amp;amp;); //读取整篇文章
+void split2sentences(char *); //把纹章拆成句子
+void preswitch(char *, int &amp;amp;); //预处理句子
+int longest_diag(int **, int, int); //求矩阵的最长对角线
+int cmp_sentences(char *, char *); //比较两个句子中最长的共同子串
+void cmp_messages(const char *, const char *); //比较两篇文章
+
+int main() &amp;#123;
+	//cmp_messages(&amp;quot;hamlet.txt&amp;quot;, &amp;quot;JaneEyre.txt&amp;quot;);
+	cmp_messages(&amp;quot;test1.txt&amp;quot;, &amp;quot;test2.txt&amp;quot;);
+
+	return 0;
+&amp;#125;
+
+int shift(char *message, int p, int len) &amp;#123; //传入len，避免溢出
+	int l = strlen(message + p);
+	while(*(message + p + l) == 0 &amp;amp;&amp;amp; p + l &amp;lt; len) l++;
+	return p + l;
+&amp;#125;
+
+char *read_message(const char *filename, int &amp;amp;len) &amp;#123;
+	FILE *file = fopen(filename, &amp;quot;r&amp;quot;);
+	if (file == NULL) &amp;#123; //考虑鲁棒性
+		printf(&amp;quot;Invalid file!&amp;quot;);
+		exit(114514);
+	&amp;#125;
+	
+	fseek(file, 0, SEEK_END);
+    len = ftell(file); //获取文章长度
+	if (len &amp;gt; MAXSIZE) &amp;#123; //同考虑鲁棒性
+		printf(&amp;quot;Overlong!&amp;quot;);
+		exit(1919810);
+	&amp;#125;
+    char *message = (char*)malloc((len + 1) * sizeof(char)); 
+    rewind(file);  //重置指针
+    fread(message, sizeof(char), len, file);
+	message[len] = &#39;\0&#39;;
+
+	fclose(file); //别忘了
+
+	return message;
+&amp;#125;
+
+void split2sentences(char *message) &amp;#123;
+	for (; *message != 0; message++) &amp;#123;
+		for (int i = 0; i &amp;lt; SPLITNUM; i ++ ) &amp;#123;
+			if (*message == punc[i]) *message = 0;
+		&amp;#125;
+	&amp;#125;
+&amp;#125;
+
+void preswitch(char *sentence, int &amp;amp;weight) &amp;#123;
+	int len = strlen(sentence);
+	weight = len;
+	for (int i = 0; i &amp;lt; len; i ++ ) &amp;#123;
+		for (int j = 0; j &amp;lt; BLANKNUM; j ++ ) &amp;#123;
+			if (sentence[i] == blank[j]) &amp;#123;
+				for (int k = i; k &amp;lt; len; k ++ ) //采用经典移位删除，同时不影响句子所占的空间大小
+					sentence[k] = sentence[k + 1];
+				sentence[len] = &#39;\0&#39;;
+				weight--;
+				break;
+			&amp;#125;
+		&amp;#125;
+	&amp;#125;
+&amp;#125;
+
+int longest_diag(int **martix, int a, int b) &amp;#123;
+	int buf, res = 0;
+	for (int i = 0; i &amp;lt; a; i ++ ) &amp;#123; //遍历从第一行开始的对角线
+		buf = 0;
+		for (int j = 0; i + j &amp;lt; b &amp;amp;&amp;amp; j &amp;lt; a; j ++ ) &amp;#123;
+			if (martix[i+j][j] == 1) buf++;
+		&amp;#125;
+		if (buf &amp;gt; res) res = buf;
+	&amp;#125;
+	for (int i = 0; i &amp;lt; b; i ++ ) &amp;#123; //遍历从第一列开始的对角线
+		buf = 0;
+		for (int j = 0; i + j &amp;lt; a &amp;amp;&amp;amp; j &amp;lt; b; j ++ ) &amp;#123;
+			if (martix[j][i+j] == 1) buf++;
+		&amp;#125;
+		if (buf &amp;gt; res) res = buf;
+	&amp;#125;
+
+	return (res &amp;gt; 5) ? res : 0;
+&amp;#125;
+
+int cmp_sentences(char *sentenceA, char *sentenceB) &amp;#123;
+	int lenSA = strlen(sentenceA);
+	int lenSB = strlen(sentenceB);
+
+	//生成矩阵
+	int **martix = (int **)malloc(sizeof(int *) * lenSB);
+	for (int i = 0; i &amp;lt; lenSB; i ++ ) 
+		*(martix + i) = (int *)malloc(sizeof(int) * lenSA);
+	for (int i = 0; i &amp;lt; lenSB; i ++ ) &amp;#123;
+		for (int j = 0; j &amp;lt; lenSA; j ++ ) &amp;#123;
+			if (*(sentenceA + j) == *(sentenceB + i))
+				martix[i][j] = 1;
+			else martix[i][j] = 0;
+		&amp;#125;		
+	&amp;#125;
+
+	//打印矩阵
+	printf(&amp;quot;Martix:\n&amp;quot;);
+	printf(&amp;quot;  &amp;quot;);
+	for (int i = 0; i &amp;lt; lenSA; i ++ ) printf(&amp;quot;%2c&amp;quot;, *(sentenceA + i));
+	printf(&amp;quot;\n&amp;quot;);
+	for (int i = 0; i &amp;lt; lenSB; i ++ ) &amp;#123;
+		printf(&amp;quot;%2c&amp;quot;, *(sentenceB + i));
+		for (int j = 0; j &amp;lt; lenSA; j ++ ) &amp;#123; 
+			printf(&amp;quot;%2d&amp;quot;, martix[i][j]);
+		&amp;#125;
+		printf(&amp;quot;\n&amp;quot;);
+	&amp;#125;
+
+	printf(&amp;quot;longest:%d\n&amp;quot;, longest_diag(martix, lenSA, lenSB));
+	int res = longest_diag(martix, lenSA, lenSB);
+
+	//养成好习惯
+	for (int i = 0; i &amp;lt; lenSB; i ++ ) free(*(martix + i));
+	free(martix);
+
+	return res;
+&amp;#125;
+
+
+void cmp_messages(const char* filenameA, const char* filenameB) &amp;#123;
+	int lenA, lenB;
+
+	char* messageA = read_message(filenameA, lenA);
+	char* messageB = read_message(filenameB, lenB);
+
+	printf(&amp;quot;%s\n&amp;quot;, messageA); 
+	printf(&amp;quot;%s\n&amp;quot;, messageB); 
+
+	printf(&amp;quot;lenA and lenB: %d %d\n\n&amp;quot;, lenA, lenB);
+
+	split2sentences(messageA);
+	split2sentences(messageB);
+	
+	int p2A = 0, p2B = 0, weightA = 0, weightB = 0, weight = 0, sum = 0, max = 0, buf = 0;
+
+	while (p2A &amp;lt; lenA) &amp;#123;
+		preswitch(messageA + p2A, weightA);
+		while (p2B &amp;lt; lenB) &amp;#123;
+			printf(&amp;quot;ptr position: %d, %d\n&amp;quot;, p2A, p2B);
+			
+			preswitch(messageB + p2B, weightB);
+
+			printf(&amp;quot;from A:&amp;quot;); puts(messageA + p2A);
+			printf(&amp;quot;from B:&amp;quot;); puts(messageB + p2B);
+
+			buf = cmp_sentences(messageA + p2A, messageB + p2B);
+			if (buf &amp;gt; max) max = buf; //取最大的n
+
+			p2B = shift(messageB, p2B, lenB);
+		&amp;#125;
+
+		sum += max;
+		weight += weightA;
+		weightA = 0; max = 0;
+		p2A = shift(messageA, p2A, lenA);
+		p2B = 0;
+	&amp;#125;
+	
+	printf(&amp;quot;Similarity: %.2f&amp;quot;, 1.0 * sum / weight);
+&amp;#125;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;输出结果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输出结果&#34;&gt;#&lt;/a&gt; 输出结果&lt;/h2&gt;
+&lt;p&gt;以以下两篇文章为例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-test1.txt&#34;&gt;I love you! You love me.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-test2.txt&#34;&gt;I love you! You don&#39;t love me.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;不同文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#不同文章&#34;&gt;#&lt;/a&gt; 不同文章&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;int main() &amp;#123;
+	cmp_messages(&amp;quot;test1.txt&amp;quot;, &amp;quot;test2.txt&amp;quot;);
+	return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;I love you! You love me.
+I love you! You don&#39;t love me.
+lenA and lenB: 24 30
+
+ptr position: 0, 0
+from A:Iloveyou
+from B:Iloveyou
+Martix:
+   I l o v e y o u
+ I 1 0 0 0 0 0 0 0
+ l 0 1 0 0 0 0 0 0
+ o 0 0 1 0 0 0 1 0
+ v 0 0 0 1 0 0 0 0
+ e 0 0 0 0 1 0 0 0
+ y 0 0 0 0 0 1 0 0
+ o 0 0 1 0 0 0 1 0
+ u 0 0 0 0 0 0 0 1
+longest:8
+ptr position: 0, 11
+from A:Iloveyou
+from B:Youdontloveme
+Martix:
+   I l o v e y o u
+ Y 0 0 0 0 0 0 0 0
+ o 0 0 1 0 0 0 1 0
+ u 0 0 0 0 0 0 0 1
+ d 0 0 0 0 0 0 0 0
+ o 0 0 1 0 0 0 1 0
+ n 0 0 0 0 0 0 0 0
+ t 0 0 0 0 0 0 0 0
+ l 0 1 0 0 0 0 0 0
+ o 0 0 1 0 0 0 1 0
+ v 0 0 0 1 0 0 0 0
+ e 0 0 0 0 1 0 0 0
+ m 0 0 0 0 0 0 0 0
+ e 0 0 0 0 1 0 0 0
+longest:0
+ptr position: 11, 0
+from A:Youloveme
+from B:Iloveyou
+Martix:
+   Y o u l o v e m e
+ I 0 0 0 0 0 0 0 0 0
+ l 0 0 0 1 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ v 0 0 0 0 0 1 0 0 0
+ e 0 0 0 0 0 0 1 0 1
+ y 0 0 0 0 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ u 0 0 1 0 0 0 0 0 0
+longest:0
+ptr position: 11, 11
+from A:Youloveme
+from B:Youdontloveme
+Martix:
+   Y o u l o v e m e
+ Y 1 0 0 0 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ u 0 0 1 0 0 0 0 0 0
+ d 0 0 0 0 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ n 0 0 0 0 0 0 0 0 0
+ t 0 0 0 0 0 0 0 0 0
+ l 0 0 0 1 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ v 0 0 0 0 0 1 0 0 0
+ e 0 0 0 0 0 0 1 0 1
+ m 0 0 0 0 0 0 0 1 0
+ e 0 0 0 0 0 0 1 0 1
+longest:6
+Similarity: 0.82
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;相同文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#相同文章&#34;&gt;#&lt;/a&gt; 相同文章&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;int main() &amp;#123;
+	cmp_messages(&amp;quot;test1.txt&amp;quot;, &amp;quot;test1.txt&amp;quot;);
+	return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;I love you! You love me.
+I love you! You love me.
+lenA and lenB: 24 24    
+
+ptr position: 0, 0      
+from A:Iloveyou
+from B:Iloveyou
+Martix:
+   I l o v e y o u      
+ I 1 0 0 0 0 0 0 0      
+ l 0 1 0 0 0 0 0 0      
+ o 0 0 1 0 0 0 1 0      
+ v 0 0 0 1 0 0 0 0      
+ e 0 0 0 0 1 0 0 0      
+ y 0 0 0 0 0 1 0 0      
+ o 0 0 1 0 0 0 1 0      
+ u 0 0 0 0 0 0 0 1      
+longest:8
+ptr position: 0, 11     
+from A:Iloveyou
+from B:Youloveme        
+Martix:
+   I l o v e y o u      
+ Y 0 0 0 0 0 0 0 0      
+ o 0 0 1 0 0 0 1 0      
+ u 0 0 0 0 0 0 0 1      
+ l 0 1 0 0 0 0 0 0
+ o 0 0 1 0 0 0 1 0
+ v 0 0 0 1 0 0 0 0
+ e 0 0 0 0 1 0 0 0
+ m 0 0 0 0 0 0 0 0
+ e 0 0 0 0 1 0 0 0
+longest:0
+ptr position: 11, 0
+from A:Youloveme
+from B:Iloveyou
+Martix:
+   Y o u l o v e m e
+ I 0 0 0 0 0 0 0 0 0
+ l 0 0 0 1 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ v 0 0 0 0 0 1 0 0 0
+ e 0 0 0 0 0 0 1 0 1
+ y 0 0 0 0 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ u 0 0 1 0 0 0 0 0 0
+longest:0
+ptr position: 11, 11
+from A:Youloveme
+from B:Youloveme
+Martix:
+   Y o u l o v e m e
+ Y 1 0 0 0 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ u 0 0 1 0 0 0 0 0 0
+ l 0 0 0 1 0 0 0 0 0
+ o 0 1 0 0 1 0 0 0 0
+ v 0 0 0 0 0 1 0 0 0
+ e 0 0 0 0 0 0 1 0 1
+ m 0 0 0 0 0 0 0 1 0
+ e 0 0 0 0 0 0 1 0 1
+longest:9
+Similarity: 1.00
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://0xd009.github.io/%E8%BF%B7%E5%AE%AB%E6%B1%82%E8%A7%A3%E5%99%A8/</guid>
+            <title>迷宫求解器</title>
+            <link>https://0xd009.github.io/%E8%BF%B7%E5%AE%AB%E6%B1%82%E8%A7%A3%E5%99%A8/</link>
+            <category term="Data Structure" scheme="https://0xd009.github.io/categories/Data-Structure/" />
+            <category term="Stack" scheme="https://0xd009.github.io/tags/Stack/" />
+            <pubDate>Tue, 06 Dec 2022 20:49:40 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;实验内容概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实验内容概述&#34;&gt;#&lt;/a&gt; 实验内容概述&lt;/h2&gt;
+&lt;p&gt;利用所学的栈及其常用操作求解二维平面内的迷宫问题&lt;/p&gt;
+&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实现思路&#34;&gt;#&lt;/a&gt; 实现思路&lt;/h2&gt;
+&lt;p&gt;穷举，对路径进行遍历，直到找到出口&lt;/p&gt;
+&lt;h3 id=&#34;需要考虑的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#需要考虑的问题&#34;&gt;#&lt;/a&gt; 需要考虑的问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;避免走重复的路径&lt;/li&gt;
+&lt;li&gt;避免走出迷宫地界&lt;/li&gt;
+&lt;li&gt;遇到死路后如何实现回退&lt;/li&gt;
+&lt;li&gt;迷宫无解如何处理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;解决办法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决办法&#34;&gt;#&lt;/a&gt; 解决办法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;对路径上每一点构造方向栈，走过该方向则出栈，避免方向选择重复从而避免路径重复&lt;/li&gt;
+&lt;li&gt;进行走法合法性检验时，在原迷宫数组外围加上一圈 “栅栏”&lt;/li&gt;
+&lt;li&gt;构造路径栈，每走一步则入栈，遇到死路或方向栈为空后则出栈&lt;/li&gt;
+&lt;li&gt;检查路径栈，若为空，则说明迷宫无解&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;其他设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其他设计&#34;&gt;#&lt;/a&gt; 其他设计&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;实验源码在 linux 系统下编译&lt;/li&gt;
+&lt;li&gt;构造位置结构体，存有玩家目前的坐标，同时由于方向栈结构简单，为图方便，也一同放入此结构体中&lt;/li&gt;
+&lt;li&gt;程序在终端中动态执行，可以直观地看到探索迷宫的过程&lt;/li&gt;
+&lt;li&gt;重要函数 &lt;code&gt;Move()&lt;/code&gt; ， &lt;code&gt;Look()&lt;/code&gt;  等的相关说明见下面的源码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码&#34;&gt;#&lt;/a&gt; 源码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;#include&amp;lt;stdio.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+#include&amp;lt;unistd.h&amp;gt;
+
+//迷宫地形以二维数组形式给出，&#39;0&#39;表示墙，&#39; &#39;表示路径，&#39;+&#39;表示经过的路径
+int maze[16][16] = &amp;#123;
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39; &#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;,
+	&amp;#123;&#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;&amp;#125;
+&amp;#125;;
+
+//位置结构体
+typedef struct Position&amp;#123;
+	int x;
+	int y;
+	int Dstack[4][2];
+	int StackSize;
+&amp;#125;Position;
+
+//路径栈
+typedef struct Path&amp;#123;
+	int size;
+	Position *stack[256];
+&amp;#125;Path;
+
+//路径栈出栈函数
+Position *Pathpop(Path *path) &amp;#123;
+    Position *pos = path -&amp;gt; stack[path -&amp;gt; size - 1];
+    path -&amp;gt; size -= 1;
+    return pos;
+&amp;#125;
+
+//路径栈入栈函数
+void Pathpush(Path *path, Position *curpos) &amp;#123;
+    path -&amp;gt; size += 1;
+    path -&amp;gt; stack[path -&amp;gt; size - 1] = curpos;
+&amp;#125;
+
+//位置结构体初始化函数
+void InitPosition(Position *pos) &amp;#123;
+    int d[4][2] = &amp;#123;&amp;#123;0,1&amp;#125;,&amp;#123;0,-1&amp;#125;,&amp;#123;1,0&amp;#125;,&amp;#123;-1,0&amp;#125;&amp;#125;;
+    for(int i = 0; i &amp;lt; 4; i++) &amp;#123;
+        for (int j = 0; j &amp;lt; 2; j++) pos -&amp;gt; Dstack[i][j] = d[i][j];
+    &amp;#125;//方向栈内是四个表示方向的二元组
+    pos -&amp;gt; StackSize = 4;
+&amp;#125;
+
+//获取方向，内含方向栈出栈操作
+int *GetDirection(Position *curpos) &amp;#123;
+	int *direction = (int *) malloc(sizeof(int) * 2);
+	direction = curpos -&amp;gt; Dstack[curpos -&amp;gt; StackSize - 1];
+	curpos -&amp;gt; StackSize -= 1;
+	return direction;
+&amp;#125;
+
+//检测走法是否合理，合理则返回1，否则返回0
+int Look(Position *curpos, int *direction) &amp;#123;
+    int protected_maze[18][18];
+    for(int i = 0; i &amp;lt; 18; i ++) &amp;#123;
+        for(int j = 0; j &amp;lt; 18; j ++) &amp;#123;
+            if(i ==0 || j == 0) protected_maze[i][j] = &#39;0&#39;;
+            else if(i == 17 || j == 17) protected_maze[i][j] = &#39;0&#39;;
+            else protected_maze[i + 1][j + 1] = maze[i][j];
+        &amp;#125;
+    &amp;#125;//围上栅栏
+    char dest = protected_maze[curpos-&amp;gt;x + direction[0] + 1][curpos-&amp;gt;y + direction[1] + 1];
+    if(dest != &#39; &#39;) return 0; //不为&#39; &#39;包括了墙和来路两种情况
+    return 1;
+&amp;#125;
+
+//移动函数
+Position *Move(Position *curpos, Path *path) &amp;#123;
+    int *direction;
+    if(curpos -&amp;gt; StackSize) &amp;#123;
+	    //不断获取方向，直到方向栈空或走法合理
+        do&amp;#123;
+            direction = GetDirection(curpos);
+        &amp;#125;
+        while(!Look(curpos, direction) &amp;amp;&amp;amp; curpos -&amp;gt; StackSize);
+        //真正开始移动，包含路径栈入栈，迷宫数组变换
+        if(Look(curpos, direction)) &amp;#123;
+            Position *pos = (Position *)malloc(sizeof(Position));
+            pos -&amp;gt; x = curpos -&amp;gt; x + direction[0];
+            pos -&amp;gt; y = curpos -&amp;gt; y + direction[1];
+            InitPosition(pos);
+            Pathpush(path, curpos);
+            curpos = pos;
+            maze[curpos -&amp;gt; x][curpos -&amp;gt; y] = &#39;+&#39;;
+            return curpos;
+        &amp;#125;
+    &amp;#125;
+	//无路可走，包含路径栈出栈，迷宫数组变换
+    maze[curpos -&amp;gt; x][curpos -&amp;gt; y] = &#39; &#39;;
+    curpos = Pathpop(path);
+    return curpos;
+&amp;#125;
+
+//实现屏幕的更新
+void UpdataScreen() &amp;#123;
+    system(&amp;quot;clear&amp;quot;);
+    for(int i = 0; i &amp;lt; 16; i ++) &amp;#123;
+		for(int j = 0; j &amp;lt; 16; j ++) printf(&amp;quot;%3c&amp;quot;, maze[i][j]);
+		printf(&amp;quot;\n&amp;quot;);
+	&amp;#125;
+    printf(&amp;quot;\n&amp;quot;);
+    usleep(300000); //单位为微秒，提升观感
+&amp;#125;
+
+int main() &amp;#123;
+	//初始化和起点设置
+    Position *curpos = (Position *)malloc(sizeof(Position));
+    Path *path = (Path *)malloc(sizeof(Path));
+    InitPosition(curpos);
+    curpos -&amp;gt; x = 4;
+    curpos -&amp;gt; y = 0;
+    path -&amp;gt; size = 0;
+    maze[curpos -&amp;gt; x][curpos -&amp;gt; y] = &#39;+&#39;;
+
+	//遍历路径直到解出或发现无解
+    do &amp;#123;
+        curpos = Move(curpos, path);
+        UpdataScreen();
+    &amp;#125;
+    while(!(curpos -&amp;gt; x == 12 &amp;amp;&amp;amp; curpos -&amp;gt; y == 15 || path -&amp;gt; size == 0));
+
+    if (path -&amp;gt; size == 0) printf(&amp;quot;STUCK!&amp;quot;); //无解
+    else printf(&amp;quot;OUT!&amp;quot;); //解出
+
+    return 0;
+&amp;#125;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;输出结果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输出结果&#34;&gt;#&lt;/a&gt; 输出结果&lt;/h2&gt;
+&lt;p&gt;STUCK：&lt;br /&gt;
+![[Pasted image 20221030121656.png]]&lt;/p&gt;
+&lt;p&gt;OUT:&lt;br /&gt;
+![[Pasted image 20221030121745.png]]&lt;/p&gt;
+&lt;h2 id=&#34;心得体会&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#心得体会&#34;&gt;#&lt;/a&gt; 心得体会&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在接触数据结构的知识之前，我也做过类似的题，其实当初用到的方法与栈的思路完全相同，只是不知道那个叫做栈，但是系统学习了栈的知识之后，再做这个实验，我明显感觉到自己的思路比以前更加清晰，尤其将 &lt;code&gt;pop()&lt;/code&gt;   &lt;code&gt;push()&lt;/code&gt;  两个操作封装成函数之后，不用每次都面对数组下标的问题，让整个程序显得非常清爽，可读性高&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://0xd009.github.io/buu%20BPUCTF%20BasicASM/</guid>
             <title>buu BPUCTF BasicASM</title>
