@@ -1,0 +1,232 @@
+<!-- build time:Wed Mar 29 2023 20:32:00 GMT+0800 (中国标准时间) --><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#FFF"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" type="application/rss+xml" title="你先别急" href="https://0xd009.github.io/rss.xml"><link rel="alternate" type="application/atom+xml" title="你先别急" href="https://0xd009.github.io/atom.xml"><link rel="alternate" type="application/json" title="你先别急" href="https://0xd009.github.io/feed.json"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/css/app.css?v=0.2.5"><link rel="canonical" href="https://0xd009.github.io/CTF/re/daily_wp/August_13/"><title>| Working on it... = 你先别急 = 又是没有干劲的一天呢~明天再努力吧~</title><meta name="generator" content="Hexo 6.3.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline"></h1><div class="meta"><span class="item" title="创建时间：2023-03-29 20:31:14"><span class="icon"><i class="ic i-calendar"></i> </span><span class="text">发表于</span> <time itemprop="dateCreated datePublished" datetime="2023-03-29T20:31:14+08:00">2023-03-29</time> </span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i> </span><span class="text">本文字数</span> <span>5.7k</span> <span class="text">字</span> </span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i> </span><span class="text">阅读时长</span> <span>5 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span> <span class="line"></span> <span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">Working on it...</a></li></ul><ul class="right"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div id="imgs" class="pjax"><ul><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9252.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9164.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9091.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-8367.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9216.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9225.webp"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"/><use xlink:href="#gentle-wave" x="48" y="3"/><use xlink:href="#gentle-wave" x="48" y="5"/><use xlink:href="#gentle-wave" x="48" y="7"/></g></svg></div><main><div class="inner"><div id="main" class="pjax"><div class="article wrap"><div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i> <span><a href="/">首页</a></span></div><article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://0xd009.github.io/CTF/re/daily_wp/August_13/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.jpg"><meta itemprop="name" content="0xD009"><meta itemprop="description" content="又是没有干劲的一天呢~明天再努力吧~, 施工ing..."></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="你先别急"></span><div class="body md" itemprop="articleBody"><p>August_13.md 杨锦东</p><h3 id="reverse四题"><a class="anchor" href="#reverse四题">#</a> Reverse 四题</h3><h4 id="1-buu-signin"><a class="anchor" href="#1-buu-signin">#</a> 1. buu signin</h4><pre><code>__int64 __fastcall main(int a1, char **a2, char **a3)
+&#123;
+  char v4[16]; // [rsp+0h] [rbp-4A0h] BYREF
+  char v5[16]; // [rsp+10h] [rbp-490h] BYREF
+  char v6[16]; // [rsp+20h] [rbp-480h] BYREF
+  char v7[16]; // [rsp+30h] [rbp-470h] BYREF
+  char v8[112]; // [rsp+40h] [rbp-460h] BYREF
+  char v9[1000]; // [rsp+B0h] [rbp-3F0h] BYREF
+  unsigned __int64 v10; // [rsp+498h] [rbp-8h]
+
+  v10 = __readfsqword(0x28u);
+  puts(&quot;[sign in]&quot;);
+  printf(&quot;[input your flag]: &quot;);
+  __isoc99_scanf(&quot;%99s&quot;, v8);
+  sub_96A(v8, (__int64)v9);
+  __gmpz_init_set_str((__int64)v7, (__int64)&quot;ad939ff59f6e70bcbfad406f2494993757eee98b91bc244184a377520d06fc35&quot;, 16LL);
+  __gmpz_init_set_str((__int64)v6, (__int64)v9, 16LL);
+  __gmpz_init_set_str(
+    (__int64)v4,
+    (__int64)&quot;103461035900816914121390101299049044413950405173712170434161686539878160984549&quot;,
+    10LL);
+  __gmpz_init_set_str((__int64)v5, (__int64)&quot;65537&quot;, 10LL);
+  __gmpz_powm((__int64)v6, (__int64)v6, (__int64)v5, (__int64)v4);
+  if ( (unsigned int)__gmpz_cmp(v6, v7) )
+    puts(&quot;GG!&quot;);
+  else
+    puts(&quot;TTTTTTTTTTql!&quot;);
+  return 0LL;
+&#125;
+</code></pre><p><code>pown()</code> 明显给出了 RSA 加密的特征， <code>init_set_str()</code> 推测是把第二个参数按第三个参数代表的进制存进第一个参数里，上次遇到 RSA 加密只是用工具解，这次把逻辑理清楚了，但是最后解到 <code>v9</code> 就得到 flag 了，不知道为什么不用解到 <code>v8</code> 。</p><pre><code>import gmpy2
+import binascii
+
+p = 282164587459512124844245113950593348271
+q = 366669102002966856876605669837014229419
+e = 65537
+d = gmpy2.invert(e, (p - 1) *(q - 1))
+
+key = 0xad939ff59f6e70bcbfad406f2494993757eee98b91bc244184a377520d06fc35
+
+flag = int(gmpy2.powmod(key, d, p*q))
+
+flag = binascii.a2b_hex(hex(flag)[2:]) # hex()函数返回字符串形式的16进制数
+
+print(flag)
+</code></pre><p>结果为 <code>suctf&#123;Pwn_@_hundred_years&#125;</code> 。</p><hr><h4 id="2-buu-transform"><a class="anchor" href="#2-buu-transform">#</a> 2. buu transform</h4><pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  char Str[104]; // [rsp+20h] [rbp-70h] BYREF
+  int j; // [rsp+88h] [rbp-8h]
+  int i; // [rsp+8Ch] [rbp-4h]
+
+  sub_402230(argc, argv, envp);
+  sub_40E640(&quot;Give me your code:\n&quot;);
+  sub_40E5F0(&quot;%s&quot;, Str);
+  if ( strlen(Str) != 33 )
+  &#123;
+    sub_40E640(&quot;Wrong!\n&quot;);
+    system(&quot;pause&quot;);
+    exit(0);
+  &#125;
+  for ( i = 0; i &lt;= 32; ++i )
+  &#123;
+    byte_414040[i] = Str[dword_40F040[i]];
+    byte_414040[i] ^= LOBYTE(dword_40F040[i]);
+  &#125;
+  for ( j = 0; j &lt;= 32; ++j )
+  &#123;
+    if ( aGy[j] != byte_414040[j] )
+    &#123;
+      sub_40E640(&quot;Wrong!\n&quot;);
+      system(&quot;pause&quot;);
+      exit(0);
+    &#125;
+  &#125;
+  sub_40E640(&quot;Right!Good Job!\n&quot;);
+  sub_40E640(&quot;Here is your flag: %s\n&quot;, Str);
+  system(&quot;pause&quot;);
+  return 0;
+&#125;
+</code></pre><p>不难，有一个坑点是 <code>dword_40F040</code> 最后要带上一个 0，不然长度对不上。</p><pre><code>a = 'gy&#123;\x7Fu+&lt;RSyW^]B&#123;-*fB~LWyAk~e&lt;\EobM'
+b = [9,10,15,23,7,24,12,6,1,16,3,17,32,29,11,30,27,22,4,13,19,20,21,2,25,5,31,8,18,26,28,14,0]
+
+flag = [0] * len(a)
+
+for i in range(len(a)):
+    t = ord(a[i]) ^ (b[i] &amp; 0xff)
+    flag[b[i]] = chr(t)
+
+print(''.join(flag))
+</code></pre><p>结果是 <code>MRCTF&#123;Tr4nsp0sltiON_Clph3r_1s_3z&#125;</code> 。</p><hr><h4 id="3-buu-usualcrypt"><a class="anchor" href="#3-buu-usualcrypt">#</a> 3. buu usualCrypt</h4><pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  int v3; // esi
+  int result; // eax
+  int v5[3]; // [esp+8h] [ebp-74h] BYREF
+  __int16 v6; // [esp+14h] [ebp-68h]
+  char v7; // [esp+16h] [ebp-66h]
+  char v8[100]; // [esp+18h] [ebp-64h] BYREF
+
+  sub_403CF8((int)&amp;unk_40E140);
+  scanf(&quot;%s&quot;, v8);
+  v5[0] = 0;
+  v5[1] = 0;
+  v5[2] = 0;
+  v6 = 0;
+  v7 = 0;
+  sub_401080((int)v8, strlen(v8), (int)v5);
+  v3 = 0;
+  while ( *((_BYTE *)v5 + v3) == aZmxhz3tignxlxj[v3] )
+  &#123;
+    if ( ++v3 &gt; strlen((const char *)v5) )
+      goto LABEL_6;
+  &#125;
+  sub_403CF8((int)aError);
+LABEL_6:
+  if ( v3 - 1 == strlen(aZmxhz3tignxlxj) )
+    result = sub_403CF8((int)aAreYouHappyYes);
+  else
+    result = sub_403CF8((int)aAreYouHappyNo);
+  return result;
+&#125;
+</code></pre><p>使用了 base64 编码，精华全在 <code>sub_401080((int)v8, strlen(v8), (int)v5)</code> 里了，这里应该应该警惕传递进去的 <code>v5</code> 和看似没用的 <code>v6</code> 和 <code>v7</code> ，稍微整理一下，得到好看一点的伪代码：</p><pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  int v3; // esi
+  int result; // eax
+  char a3[15]; // [esp+8h] [ebp-74h] BYREF
+  char a1[100]; // [esp+18h] [ebp-64h] BYREF
+
+  sub_403CF8(asc_40E140);
+  scanf(&quot;%s&quot;, a1);
+  *(_DWORD *)a3 = 0;
+  *(_DWORD *)&amp;a3[4] = 0;
+  *(_DWORD *)&amp;a3[8] = 0;
+  *(_WORD *)&amp;a3[12] = 0;
+  a3[14] = 0;
+  sub_401080(a1, strlen(a1), a3);
+  v3 = 0;
+  while ( a3[v3] == aZmxhz3tignxlxj[v3] )
+  &#123;
+    if ( ++v3 &gt; strlen(a3) )
+      goto LABEL_6;
+  &#125;
+  sub_403CF8(aError);
+LABEL_6:
+  if ( v3 - 1 == strlen(aZmxhz3tignxlxj) )
+    result = sub_403CF8(aAreYouHappyYes);
+  else
+    result = sub_403CF8(aAreYouHappyNo);
+  return result;
+&#125;
+</code></pre><p>来看精华部分：</p><pre><code>void __cdecl sub_401080(char *a1, int a2, char *a3)
+&#123;
+  int v3; // edi
+  int v4; // esi
+  int v5; // edx
+  char *v6; // eax
+  int v7; // ecx
+  int v8; // esi
+  int v9; // esi
+  int v10; // esi
+  int v11; // esi
+  char *v12; // ecx
+  int v13; // esi
+  int a2a; // [esp+18h] [ebp+8h]
+
+  v3 = 0;
+  v4 = 0;
+  sub_401000();
+  v5 = a2 % 3;
+  v6 = a1;
+  v7 = a2 - a2 % 3;
+  a2a = a2 % 3;
+  if ( v7 &gt; 0 )
+  &#123;
+    do
+    &#123;
+      LOBYTE(v5) = a1[v3];
+      v3 += 3;
+      v8 = v4 + 1;
+      a3[v8 - 1] = BASE64_table_40E0A0[(v5 &gt;&gt; 2) &amp; 0x3F];
+      a3[v8++] = BASE64_table_40E0A0[16 * (a1[v3 - 3] &amp; 3) + (((int)(unsigned __int8)a1[v3 - 2] &gt;&gt; 4) &amp; 0xF)];
+      a3[v8++] = BASE64_table_40E0A0[4 * (a1[v3 - 2] &amp; 0xF) + (((int)(unsigned __int8)a1[v3 - 1] &gt;&gt; 6) &amp; 3)];
+      v5 = a1[v3 - 1] &amp; 0x3F;
+      v4 = v8 + 1;
+      a3[v4 - 1] = BASE64_table_40E0A0[v5];
+    &#125;
+    while ( v3 &lt; v7 );
+    v5 = a2a;
+  &#125;
+  if ( v5 == 1 )
+  &#123;
+    LOBYTE(v7) = a1[v3];
+    v9 = v4 + 1;
+    a3[v9 - 1] = BASE64_table_40E0A0[(v7 &gt;&gt; 2) &amp; 0x3F];
+    v10 = v9 + 1;
+    a3[v10 - 1] = BASE64_table_40E0A0[16 * (a1[v3] &amp; 3)];
+    a3[v10] = 61;
+LABEL_8:
+    v13 = v10 + 1;
+    a3[v13] = 61;
+    v4 = v13 + 1;
+    goto LABEL_9;
+  &#125;
+  if ( v5 == 2 )
+  &#123;
+    v11 = v4 + 1;
+    a3[v11 - 1] = BASE64_table_40E0A0[((int)(unsigned __int8)a1[v3] &gt;&gt; 2) &amp; 0x3F];
+    v12 = &amp;a1[v3 + 1];
+    LOBYTE(v6) = *v12;
+    v10 = v11 + 1;
+    a3[v10 - 1] = BASE64_table_40E0A0[16 * (a1[v3] &amp; 3) + (((int)v6 &gt;&gt; 4) &amp; 0xF)];
+    a3[v10] = BASE64_table_40E0A0[4 * (*v12 &amp; 0xF)];
+    goto LABEL_8;
+  &#125;
+LABEL_9:
+  a3[v4] = 0;
+  sub_401030(a3);
+&#125;
+</code></pre><p>除了 base64 编码之外，还有两个函数，开始因为没参数所以没管，第一个 <code>sub_401000()</code> 对索引表进行了修改，第二个 <code>sub_401030()</code> 把大小写切换后的字符串存到 a3 里了，而最后比对也是用 a3，这两处我是用 ollydbg 发现的，虽然其实没什么必要，但是能动态直观地看到程序在做什么，比盯着静态的代码看要轻松不少。</p><pre><code>import base64
+import string
+
+a = 'zMXHz3TIgnxLxJhFAdtZn2fFk3lYCrtPC2l9'.swapcase()
+
+key1 = 'ABCDEFQRSTUVWXYPGHIJKLMNOZabcdefghijklmnopqrstuvwxyz0123456789+/'
+key2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+
+transtable = str.maketrans(key1, key2)
+
+a = a.translate(transtable)
+
+flag = base64.b64decode(a.encode('utf-8'))
+
+print(flag)
+</code></pre><p>结果为 <code>flag&#123;bAse64_h2s_a_Surprise&#125;</code> 。</p><hr><h4 id="4-buu-level2"><a class="anchor" href="#4-buu-level2">#</a> 4. buu level2</h4><p>脱壳题，脱去 upx 壳后，在字符串列表里就能看到 <code>wctf2020&#123;Just_upx_-d&#125;</code> 。</p></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i> </span><span class="text">更新于</span> <time title="修改时间：2022-10-30 01:04:26" itemprop="dateModified" datetime="2022-10-30T01:04:26+08:00">2022-10-30</time> </span><span id="CTF/re/daily_wp/August_13/" class="item leancloud_visitors" data-flag-title="" title="阅读次数"><span class="icon"><i class="ic i-eye"></i> </span><span class="text">阅读次数</span> <span class="leancloud-visitors-count"></span> <span class="text">次</span></span></div><div id="copyright"><ul><li class="author"><strong>本文作者： </strong>0xD009 <i class="ic i-at"><em>@</em></i>你先别急</li><li class="link"><strong>本文链接：</strong> <a href="https://0xd009.github.io/CTF/re/daily_wp/August_13/">https://0xd009.github.io/CTF/re/daily_wp/August_13/</a></li><li class="license"><strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/CTF/re/daily_wp/August_11/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;albedowang&#x2F;cdn@1.0.1&#x2F;img-9096.webp" title="未命名"><span class="type">上一篇</span> <span class="category"><i class="ic i-flag"></i></span><h3>未命名</h3></a></div><div class="item right"><a href="/CTF/re/daily_wp/August_5/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;albedowang&#x2F;cdn@1.0.1&#x2F;img-9160.webp" title="未命名"><span class="type">下一篇</span> <span class="category"><i class="ic i-flag"></i></span><h3>未命名</h3></a></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#reverse%E5%9B%9B%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">Reverse 四题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-buu-signin"><span class="toc-number">1.1.</span> <span class="toc-text">1. buu signin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-buu-transform"><span class="toc-number">1.2.</span> <span class="toc-text">2. buu transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-buu-usualcrypt"><span class="toc-number">1.3.</span> <span class="toc-text">3. buu usualCrypt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-buu-level2"><span class="toc-number">1.4.</span> <span class="toc-text">4. buu level2</span></a></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="image" itemprop="image" alt="0xD009" data-src="/images/avatar.jpg"><p class="name" itemprop="name">0xD009</p><div class="description" itemprop="description">施工ing...</div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">46</span> <span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">17</span> <span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">36</span> <span class="name">标签</span></a></div></nav><div class="social"><span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tLzB4ZDAwOQ==" title="https:&#x2F;&#x2F;github.com&#x2F;0xd009"><i class="ic i-github"></i></span> <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9nYW8tbGVuZy1uYW4tc2hlbi02My0zMg==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;gao-leng-nan-shen-63-32"><i class="ic i-zhihu"></i></span></div><ul class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li><li class="item"><a href="/about/" rel="section"><i class="ic i-user"></i>关于</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a><ul class="submenu"><li class="item"><a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a></li><li class="item"><a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a></li><li class="item"><a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a></li></ul></li><li class="item"><a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a></li><li class="item"><a href="/links/" rel="section"><i class="ic i-magic"></i>links</a></li></ul></div></div></div><ul id="quick"><li class="prev pjax"><a href="/CTF/re/daily_wp/August_11/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/CTF/re/daily_wp/August_5/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20INSHack2018%20Tricky-Part1/" title="buu INSHack2018 Tricky-Part1">buu INSHack2018 Tricky-Part1</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20Who%20is%20he/" title="buu Who is he">buu Who is he</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20fungame/" title="buu fungame">buu fungame</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/CTF/re/daily_wp/August_5/" title="未命名">未命名</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/learning/" title="分类于 learning">learning</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/learning/notes/" title="分类于 notes">notes</a></div><span><a href="/CTF/re/learning/notes/%E8%8A%B1%E6%8C%87%E4%BB%A4/" title="花指令">花指令</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/Student-Work/" title="分类于 垃圾场">垃圾场</a> <i class="ic i-angle-right"></i> <a href="/categories/Student-Work/USTC/" title="分类于 USTC">USTC</a> <i class="ic i-angle-right"></i> <a href="/categories/Student-Work/USTC/Data-Structure/" title="分类于 数据结构">数据结构</a></div><span><a href="/Student-Work/USTC/Data-Structure/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="哈夫曼编码">哈夫曼编码</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20De1CTF%20Resign/" title="buu De1CTF Resign">buu De1CTF Resign</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20HDCTF%20MFC/" title="buu HDCTF MFC">buu HDCTF MFC</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20Baby%20Obfuscation/" title="buu Baby Obfuscation">buu Baby Obfuscation</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/competitions/" title="分类于 competitions">competitions</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/competitions/Hackergame/" title="分类于 Hackergame">Hackergame</a></div><span><a href="/CTF/re/writeups/competitions/Hackergame/Hackergame2022/" title="Hackergame2022">Hackergame2022</a></span></li></ul></div><div><h2>最新评论</h2><ul class="leancloud-recent-comment"></ul></div></div><div class="status"><div class="copyright">&copy; 2010 – <span itemprop="copyrightYear">2023</span> <span class="with-love"><i class="ic i-sakura rotate"></i> </span><span class="author" itemprop="copyrightHolder">0xD009 @ Working on it...</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i> </span><span title="站点总字数">123k 字</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="ic i-coffee"></i> </span><span title="站点阅读时长">1:52</span></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL={path:"CTF/re/daily_wp/August_13/",favicon:{show:"（●´3｀●）やれやれだぜ",hide:"(´Д｀)大変だ！"},search:{placeholder:"文章搜索",empty:"关于 「 ${query} 」，什么也没搜到",stats:"${time} ms 内找到 ${hits} 条结果"},valine:!0,fancybox:!0,copyright:'复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',ignores:[function(e){return e.includes("#")},function(e){return new RegExp(LOCAL.path+"$").test(e)}]}</script><script src="https://cdn.polyfill.io/v2/polyfill.js"></script><script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script><script src="/js/app.js?v=0.2.5"></script></body></html><!-- rebuild by hrmmi -->

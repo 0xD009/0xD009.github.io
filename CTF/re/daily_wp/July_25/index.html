@@ -1,0 +1,266 @@
+<!-- build time:Wed Mar 29 2023 20:32:00 GMT+0800 (中国标准时间) --><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#FFF"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" type="application/rss+xml" title="你先别急" href="https://0xd009.github.io/rss.xml"><link rel="alternate" type="application/atom+xml" title="你先别急" href="https://0xd009.github.io/atom.xml"><link rel="alternate" type="application/json" title="你先别急" href="https://0xd009.github.io/feed.json"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/css/app.css?v=0.2.5"><link rel="canonical" href="https://0xd009.github.io/CTF/re/daily_wp/July_25/"><title>| Working on it... = 你先别急 = 又是没有干劲的一天呢~明天再努力吧~</title><meta name="generator" content="Hexo 6.3.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline"></h1><div class="meta"><span class="item" title="创建时间：2023-03-29 20:31:14"><span class="icon"><i class="ic i-calendar"></i> </span><span class="text">发表于</span> <time itemprop="dateCreated datePublished" datetime="2023-03-29T20:31:14+08:00">2023-03-29</time> </span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i> </span><span class="text">本文字数</span> <span>7.4k</span> <span class="text">字</span> </span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i> </span><span class="text">阅读时长</span> <span>7 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span> <span class="line"></span> <span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">Working on it...</a></li></ul><ul class="right"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div id="imgs" class="pjax"><ul><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9208.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9216.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9091.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9214.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9160.webp"></li><li class="item" data-background-image="https://cdn.jsdelivr.net/gh/albedowang/cdn@1.0.1/img-9161.webp"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"/><use xlink:href="#gentle-wave" x="48" y="3"/><use xlink:href="#gentle-wave" x="48" y="5"/><use xlink:href="#gentle-wave" x="48" y="7"/></g></svg></div><main><div class="inner"><div id="main" class="pjax"><div class="article wrap"><div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i> <span><a href="/">首页</a></span></div><article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://0xd009.github.io/CTF/re/daily_wp/July_25/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.jpg"><meta itemprop="name" content="0xD009"><meta itemprop="description" content="又是没有干劲的一天呢~明天再努力吧~, 施工ing..."></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="你先别急"></span><div class="body md" itemprop="articleBody"><p>July_25.md 杨锦东</p><h3 id="reverse四题-熟悉ida操作"><a class="anchor" href="#reverse四题-熟悉ida操作">#</a> Reverse 四题 - 熟悉 IDA 操作</h3><h4 id="1-攻防世界-easyre1"><a class="anchor" href="#1-攻防世界-easyre1">#</a> 1. 攻防世界 easyRE1</h4><p>IDA+F5 得到如下伪代码：</p><pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  char s1[264]; // [rsp+10h] [rbp-110h] BYREF
+  unsigned __int64 v5; // [rsp+118h] [rbp-8h]
+
+  v5 = __readfsqword(0x28u);
+  puts(&quot;What is the password?&quot;);
+  gets(s1);
+  if ( !strcmp(s1, &quot;the password&quot;) )
+    puts(&quot;FLAG:db2f62a36a018bce28e46d976e3f9864&quot;);
+  else
+    puts(&quot;Wrong!!&quot;);
+  return 0;
+&#125;
+</code></pre><p>直接读出 flag, 注意 flag 的标准形式: <code>flag&#123;xxxxxxxxxx&#125;</code> , 经修改后提交，解毕.</p><hr><h4 id="2-信安实践-hlo-wd"><a class="anchor" href="#2-信安实践-hlo-wd">#</a> 2. 信安实践 Hlo Wd</h4><p>IDA+F5 得到如下伪代码:</p><pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  int v3; // eax
+  int i; // [esp+1Ch] [ebp-4h]
+
+  __main();
+  printf(&quot;Welcome! Here's your flag part1: %s\n&quot;, part1);
+  if ( argc &gt; 3 &amp;&amp; atoi(argv[1]) == 101 &amp;&amp; !strcmp(argv[2], &quot;givemeflag&quot;) &amp;&amp; !strcmp(argv[3], &quot;05709288&quot;) )
+  &#123;
+    printf(&quot;And part2: &quot;);
+    for ( i = 0; part2[i]; ++i )
+    &#123;
+      v3 = i ^ part2[i];
+      LOBYTE(v3) = v3 ^ 0xB1;
+      putchar(v3);
+    &#125;
+  &#125;
+  else
+  &#123;
+    printf(&quot;Nope. I can't give you flag.&quot;);
+  &#125;
+  putchar(10);
+  return 0;
+&#125;
+</code></pre><p>双击变量 <code>part1</code> 读出 <code>flag&#123;we1c0m3_tO_R3V3rs</code> .<br>按 if 语句提示在命令行窗口输入 <code>SgNHOKwX.exe 101 givemeflag 05709288</code> 得到 <code>part2</code> : <code>e_Englneer1Ng_4638d3df&#125;</code> .<br>两段合并提交，解毕.</p><hr><h4 id="3-信安实践-easy-operation"><a class="anchor" href="#3-信安实践-easy-operation">#</a> 3. 信安实践 Easy Operation</h4><p>IDA+F5 得到如下伪代码:</p><pre><code>BOOL __cdecl check(_BYTE *a1, _BYTE *a2, _BYTE *a3)
+&#123;
+  return a2[6] + a1[6] == a3[6]
+      &amp;&amp; a2[15] * a1[15] == a3[15]
+      &amp;&amp; a2[24] * a1[24] == a3[24]
+      &amp;&amp; a2[28] * a1[28] == a3[28]
+      &amp;&amp; a1[4] - a2[4] == a3[4]
+      &amp;&amp; a2[9] + a1[9] == a3[9]
+      &amp;&amp; a2[32] * a1[32] == a3[32]
+      &amp;&amp; a2[8] + a1[8] == a3[8]
+      &amp;&amp; a1[22] - a2[22] == a3[22]
+      &amp;&amp; a1[14] - a2[14] == a3[14]
+      &amp;&amp; a2[11] * a1[11] == a3[11]
+      &amp;&amp; a2[13] * a1[13] == a3[13]
+      &amp;&amp; a1[26] - a2[26] == a3[26]
+      &amp;&amp; a2[2] * a1[2] == a3[2]
+      &amp;&amp; a2[37] + a1[37] == a3[37]
+      &amp;&amp; a2[40] + a1[40] == a3[40]
+      &amp;&amp; (a2[25] ^ a1[25]) == a3[25]
+      &amp;&amp; a1[12] - a2[12] == a3[12]
+      &amp;&amp; a2[1] * a1[1] == a3[1]
+      &amp;&amp; (a2[3] ^ a1[3]) == a3[3]
+      &amp;&amp; a2[41] * a1[41] == a3[41]
+      &amp;&amp; a2[27] * a1[27] == a3[27]
+      &amp;&amp; *a2 + *a1 == *a3
+      &amp;&amp; (a2[23] ^ a1[23]) == a3[23]
+      &amp;&amp; a2[30] * a1[30] == a3[30]
+      &amp;&amp; a2[16] + a1[16] == a3[16]
+      &amp;&amp; (a2[31] ^ a1[31]) == a3[31]
+      &amp;&amp; a1[39] - a2[39] == a3[39]
+      &amp;&amp; (a2[20] ^ a1[20]) == a3[20]
+      &amp;&amp; a2[19] * a1[19] == a3[19]
+      &amp;&amp; a2[21] + a1[21] == a3[21]
+      &amp;&amp; a2[17] * a1[17] == a3[17]
+      &amp;&amp; a1[36] - a2[36] == a3[36]
+      &amp;&amp; a2[35] + a1[35] == a3[35]
+      &amp;&amp; a2[7] + a1[7] == a3[7]
+      &amp;&amp; a1[18] - a2[18] == a3[18]
+      &amp;&amp; a2[33] + a1[33] == a3[33]
+      &amp;&amp; a2[10] * a1[10] == a3[10]
+      &amp;&amp; a2[34] + a1[34] == a3[34]
+      &amp;&amp; (a2[5] ^ a1[5]) == a3[5]
+      &amp;&amp; a2[38] + a1[38] == a3[38]
+      &amp;&amp; a2[29] * a1[29] == a3[29]
+      &amp;&amp; !a1[42];
+&#125;
+
+int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  _DWORD v4[10]; // [esp+1Ah] [ebp-86h] BYREF
+  __int16 v5; // [esp+42h] [ebp-5Eh]
+  _DWORD v6[10]; // [esp+44h] [ebp-5Ch] BYREF
+  __int16 v7; // [esp+6Ch] [ebp-34h]
+  _BYTE v8[50]; // [esp+6Eh] [ebp-32h] BYREF
+
+  __main();
+  v6[0] = 206639415;
+  v6[1] = 1510110512;
+  v6[2] = 422135413;
+  v6[3] = 1595215209;
+  v6[4] = 357973340;
+  v6[5] = 741806702;
+  v6[6] = 1125861891;
+  v6[7] = 389898001;
+  v6[8] = 1329397819;
+  v6[9] = 173561357;
+  v7 = 17766;
+  v4[0] = 1806773405;
+  v4[1] = -949090741;
+  v4[2] = 1194162117;
+  v4[3] = 1313911014;
+  v4[4] = -254040944;
+  v4[5] = 1128100096;
+  v4[6] = -2109065187;
+  v4[7] = 1915178677;
+  v4[8] = -1317915675;
+  v4[9] = 700233510;
+  v5 = -20065;
+  printf(&quot;Input your flag: &quot;);
+  scanf(&quot;%50s&quot;, v8);
+  if ( check(v8, v6, v4) )
+    puts(&quot;Correct!&quot;);
+  else
+    puts(&quot;Wrong, try again.&quot;);
+  return 0;
+&#125;
+</code></pre><p>观察发现:</p><ul><li><code>check()函数</code> 在定义处传入参数类型为 <code>_byte *</code> , 而 <code>main()函数</code> 中实际传入的后两个参数为 <code>_dword *</code> .</li><li><code>check()函数</code> 的返回值表达式中，形参的下标最大达到 42 (鉴定为 0), 考虑实际上 <code>v6</code> , <code>v4</code> 只有 40 字节，按照变量声明顺序， <code>v5</code> 接在 <code>v4</code> 后， <code>v7</code> 接在 <code>v6</code> 后，补全不足的字节.</li></ul><p>依托以上两点，写 C 程序对 <code>check()函数</code> 的表达式求逆，代码如下:</p><pre><code>#include&lt;stdio.h&gt;
+
+int main() &#123;
+    unsigned char a1[50]; //指v8
+    unsigned char a2[42]; //指v6
+    unsigned char a3[42]; //指v4
+
+    *(unsigned int *)(a2) = 206639415;
+    *(unsigned int *)(&amp;a2[4]) = 1510110512;
+    *(unsigned int *)(&amp;a2[8]) = 422135413;
+    *(unsigned int *)(&amp;a2[12]) = 1595215209;
+    *(unsigned int *)(&amp;a2[16]) = 357973340;
+    *(unsigned int *)(&amp;a2[20]) = 741806702;
+    *(unsigned int *)(&amp;a2[24]) = 1125861891;
+    *(unsigned int *)(&amp;a2[28]) = 389898001;
+    *(unsigned int *)(&amp;a2[32]) = 1329397819;
+    *(unsigned int *)(&amp;a2[36]) = 173561357;
+    *(short *)(&amp;a2[40]) = 17766;
+
+    *(unsigned int *)(a3) = 1806773405;
+    *(unsigned int *)(&amp;a3[4]) = -949090741;
+    *(unsigned int *)(&amp;a3[8]) = 1194162117;
+    *(unsigned int *)(&amp;a3[12]) = 1313911014;
+    *(unsigned int *)(&amp;a3[16]) = -254040944;
+    *(unsigned int *)(&amp;a3[20]) = 1128100096;
+    *(unsigned int *)(&amp;a3[24]) = -2109065187;
+    *(unsigned int *)(&amp;a3[28]) = 1915178677;
+    *(unsigned int *)(&amp;a3[32]) = -1317915675;
+    *(unsigned int *)(&amp;a3[36]) = 700233510;
+    *(short *)(&amp;a3[40]) = -20065;
+
+    a1[0] = a3[0] - a2[0];
+    a1[6] = a3[6] - a2[6];
+    a1[7] = a3[7] - a2[7];
+    a1[8] = a3[8] - a2[8];
+    a1[9] = a3[9] - a2[9];
+    a1[16] = a3[16] - a2[16];
+    a1[21] = a3[21] - a2[21];
+    a1[33] = a3[33] - a2[33];
+    a1[34] = a3[34] - a2[34];
+    a1[35] = a3[35] - a2[35];
+    a1[37] = a3[37] - a2[37];
+    a1[38] = a3[38] - a2[38];
+    a1[40] = a3[40] - a2[40];
+    int v[15] = &#123;1, 2, 10, 11, 13, 15, 17, 19, 24, 27, 28, 29, 30, 32, 41&#125;;
+    for(int k = 0; k &lt; 15; k++) &#123;
+        for(int j = 0; j &lt; 256; j++) &#123;
+            if((a2[v[k]] * j &amp; 0xff) == a3[v[k]]) &#123;
+                a1[v[k]] = j;
+                break;
+            &#125;
+        &#125;
+    &#125;
+    a1[4] = a3[4] + a2[4];
+    a1[12] = a3[12] + a2[12];
+    a1[14] = a3[14] + a2[14];
+    a1[18] = a3[18] + a2[18];
+    a1[22] = a3[22] + a2[22];
+    a1[26] = a3[26] + a2[26];
+    a1[36] = a3[36] + a2[36];
+    a1[39] = a3[39] + a2[39];
+    a1[3] = a3[3] ^ a2[3];
+    a1[5] = a3[5] ^a2[5];
+    a1[20] = a3[20] ^ a2[20];
+    a1[23] = a3[23] ^ a2[23];
+    a1[25] = a3[25] ^ a2[25];
+    a1[31] = a3[31] ^ a2[31];
+    a1[42] = 0;
+
+    for(int i = 0; i &lt;= 42; i++) &#123;
+        printf(&quot;%c&quot;, a1[i]);
+    &#125;
+
+    return 0;
+
+&#125;
+</code></pre><p><em><strong>过程中注意以下几点</strong></em></p><ul><li>原表达式中乘法计算结果溢出 ( <code>unsigned char 1字节</code> ), 求逆不可直接用除法，改用 <code>for循环</code> 爆破，其中 <code>&amp; 0xff</code> 用于保留计算结果的后 8 位.</li><li>IDA 伪代码中数据类型与 C 语言中的对应<table><thead><tr><th style="text-align:center">IDA 伪代码</th><th style="text-align:center">C 语言</th><th style="text-align:center">占用</th></tr></thead><tbody><tr><td style="text-align:center"><code>_BYTE</code> 或 <code>unsigned __int8</code></td><td style="text-align:center"><code>unsigned char</code></td><td style="text-align:center">1 字节</td></tr><tr><td style="text-align:center"><code>_WORD</code> 或 <code>unsigned __int16</code></td><td style="text-align:center"><code>short</code></td><td style="text-align:center">2 字节</td></tr><tr><td style="text-align:center"><code>_DWORD</code></td><td style="text-align:center"><code>unsigned int</code></td><td style="text-align:center">4 字节</td></tr><tr><td style="text-align:center"><code>_QWORD</code></td><td style="text-align:center"><code>unsigned long long</code></td><td style="text-align:center">8 字节</td></tr></tbody></table></li><li>用到的赋值<pre><code>char s[4];
+*(unsigned int*) s = 0x333231;
+</code></pre>达到的效果是 <code>s[0] = '1' (0x31), s[1] = '2' (0x32), s[2] = '3' (0x33), s[3] = '\x00'</code></li></ul><p>艰难的摸索两小时后 (其中赋值打错一次), C 程序输出 <code>flag&#123;slmP1e_Oper4t10n_to_reVer3e_35b3ad39&#125;</code> , 解毕.</p><hr><h4 id="4-信安实践-rc4"><a class="anchor" href="#4-信安实践-rc4">#</a> 4. 信安实践 RC4</h4><p>IDA+F5 得到如下伪代码:</p><pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  size_t v3; // eax
+  _BYTE v5[256]; // [esp+1Eh] [ebp-132h] BYREF
+  char Str[50]; // [esp+11Eh] [ebp-32h] BYREF
+
+  __main();
+  printf(&quot;Input your flag: &quot;);
+  scanf(&quot;%50s&quot;, Str);
+  RC4Init((int)v5, (int)&amp;unk_41105B, 0x10u);
+  v3 = strlen(Str);
+  RC4Crypt(v5, Str, v3);
+  if ( !memcmp(Str, &amp;enc_buf, 0x2Cu) )
+    puts(&quot;Correct!&quot;);
+  else
+    puts(&quot;Wrong, try again.&quot;);
+  return 0;
+&#125;
+</code></pre><p>题设提供加密算法的 C 语言实现如下:</p><pre><code>void RC4Init(unsigned char* RC4Box, unsigned char* key, unsigned int keylen) &#123;
+	for (int i = 0; i &lt; 256; i++) &#123;
+		RC4Box[i] = i;
+	&#125;
+	for (int i = 0, j = 0; i &lt; 256; i++) &#123;
+		j = (j + RC4Box[i] + key[i % keylen]) &amp; 0xff;
+		int tmp = RC4Box[i];
+		RC4Box[i] = RC4Box[j];
+		RC4Box[j] = tmp;
+	&#125;
+&#125;
+
+void RC4Crypt(unsigned char* RC4Box, char* data, unsigned int len) &#123;
+	for (int i = 0, j = 0, k = 0; k &lt; len; k++) &#123;
+		i = (i + 1) &amp; 0xff;
+		j = (j + RC4Box[i]) &amp; 0xff;
+		int tmp = RC4Box[i];
+		RC4Box[i] = RC4Box[j];
+		RC4Box[j] = tmp;
+		data[k] ^= RC4Box[(RC4Box[i] + RC4Box[j]) &amp; 0xff];
+	&#125;
+&#125;
+</code></pre><p>观察发现:</p><ul><li><code>RC4Init()函数</code> 与输入值无关.</li><li><code>RC4Crypt()函数</code> 是流加密.<br><em><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTYlQjUlODElRTUlOEElQTAlRTUlQUYlODYvMTU1Mzc4MzA/ZnI9YWxhZGRpbg==">流加密</span>是对称加密算法的一种，加密和解密双方使用相同伪随机加密数据流（pseudo-randomstream）作为密钥，明文数据每次与密钥数据流顺次对应加密，得到密文数据流。实践中数据通常是一个位（bit）并用异或（xor）操作加密.</em></li></ul><p>根据以上两点写 C 程序:</p><pre><code>int main() &#123;
+	unsigned char v5[256];
+	unsigned char v1[] = 
+        &#123;
+            0x0A0, 0x2A, 0x13, 0x3B, 
+            0x49, 0x28, 0x0AE, 0x5A, 
+            0x24, 0x55, 0x0A9, 0x0DD,
+            0x41, 0x0F4, 0x0FA, 0x0F2, 0
+        &#125;;
+	unsigned char v2[] =
+	&#123;
+		0xF0, 0x43, 0x75, 0x7A, 0xE3, 0x94, 0xA5, 0x08, 0x4D, 0xA8, 
+		0x88, 0x08, 0x56, 0x93, 0x03, 0x89, 0xB5, 0x3E, 0x5D, 0xD2, 
+		0x80, 0x9B, 0x06, 0x5A, 0x20, 0x3A, 0xE4, 0x8C, 0xF3, 0x71, 
+		0x59, 0x36, 0x56, 0xB8, 0x4C, 0xD0, 0xC9, 0xE1, 0xDE, 0xAF, 
+		0x8E, 0xE0, 0x11, 0x00
+	&#125;;
+	RC4Init((int)v5, (int)v1, 0x10u);
+	RC4Crypt(v5, v2, 43);
+	puts(v2);
+
+	return 0;
+&#125;
+</code></pre><p>其中 <code>v1</code> , <code>v2</code> 通过在 IDA 伪代码中双击 <code>unk_41105B</code> 和 <code>enc_buf</code> 得到，再次双击高亮后按 <code>Y</code> 修改变量类型定义，按 <code>N</code> 修改变量名，按 <code>SHIFT+E</code> 输出为 C 语言数组.<br>最后 C 程序输出 <code>flag&#123;S+4nDard_sTr3aM_c1pHeR_rrrc4_ded7dcc9&#125;</code> , 提交，解毕.</p></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i> </span><span class="text">更新于</span> <time title="修改时间：2022-10-30 01:04:26" itemprop="dateModified" datetime="2022-10-30T01:04:26+08:00">2022-10-30</time> </span><span id="CTF/re/daily_wp/July_25/" class="item leancloud_visitors" data-flag-title="" title="阅读次数"><span class="icon"><i class="ic i-eye"></i> </span><span class="text">阅读次数</span> <span class="leancloud-visitors-count"></span> <span class="text">次</span></span></div><div id="copyright"><ul><li class="author"><strong>本文作者： </strong>0xD009 <i class="ic i-at"><em>@</em></i>你先别急</li><li class="link"><strong>本文链接：</strong> <a href="https://0xd009.github.io/CTF/re/daily_wp/July_25/">https://0xd009.github.io/CTF/re/daily_wp/July_25/</a></li><li class="license"><strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/CTF/re/daily_wp/August_7/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;albedowang&#x2F;cdn@1.0.1&#x2F;img-9144.webp" title="未命名"><span class="type">上一篇</span> <span class="category"><i class="ic i-flag"></i></span><h3>未命名</h3></a></div><div class="item right"><a href="/CTF/re/daily_wp/July_26/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;albedowang&#x2F;cdn@1.0.1&#x2F;img-9161.webp" title="未命名"><span class="type">下一篇</span> <span class="category"><i class="ic i-flag"></i></span><h3>未命名</h3></a></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#reverse%E5%9B%9B%E9%A2%98-%E7%86%9F%E6%82%89ida%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">Reverse 四题 - 熟悉 IDA 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-easyre1"><span class="toc-number">1.1.</span> <span class="toc-text">1. 攻防世界 easyRE1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BF%A1%E5%AE%89%E5%AE%9E%E8%B7%B5-hlo-wd"><span class="toc-number">1.2.</span> <span class="toc-text">2. 信安实践 Hlo Wd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BF%A1%E5%AE%89%E5%AE%9E%E8%B7%B5-easy-operation"><span class="toc-number">1.3.</span> <span class="toc-text">3. 信安实践 Easy Operation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BF%A1%E5%AE%89%E5%AE%9E%E8%B7%B5-rc4"><span class="toc-number">1.4.</span> <span class="toc-text">4. 信安实践 RC4</span></a></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="image" itemprop="image" alt="0xD009" data-src="/images/avatar.jpg"><p class="name" itemprop="name">0xD009</p><div class="description" itemprop="description">施工ing...</div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">46</span> <span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">17</span> <span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">36</span> <span class="name">标签</span></a></div></nav><div class="social"><span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tLzB4ZDAwOQ==" title="https:&#x2F;&#x2F;github.com&#x2F;0xd009"><i class="ic i-github"></i></span> <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9nYW8tbGVuZy1uYW4tc2hlbi02My0zMg==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;gao-leng-nan-shen-63-32"><i class="ic i-zhihu"></i></span></div><ul class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li><li class="item"><a href="/about/" rel="section"><i class="ic i-user"></i>关于</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a><ul class="submenu"><li class="item"><a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a></li><li class="item"><a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a></li><li class="item"><a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a></li></ul></li><li class="item"><a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a></li><li class="item"><a href="/links/" rel="section"><i class="ic i-magic"></i>links</a></li></ul></div></div></div><ul id="quick"><li class="prev pjax"><a href="/CTF/re/daily_wp/August_7/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/CTF/re/daily_wp/July_26/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/learning/" title="分类于 learning">learning</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/learning/languages/" title="分类于 languages">languages</a></div><span><a href="/CTF/re/learning/languages/Python%E9%80%86%E5%90%91/" title="Python逆向">Python逆向</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20FlareOn4%20geek_to_me/" title="buu FlareOn4 geek_to_me">buu FlareOn4 geek_to_me</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20INSHack2018%20Tricky-Part1/" title="buu INSHack2018 Tricky-Part1">buu INSHack2018 Tricky-Part1</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/CTF/re/daily_wp/August_5/" title="未命名">未命名</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20Who%20is%20he/" title="buu Who is he">buu Who is he</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20HDCTF%20MFC/" title="buu HDCTF MFC">buu HDCTF MFC</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/" title="分类于 exercises">exercises</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/exercises/buu/" title="分类于 buu">buu</a></div><span><a href="/CTF/re/writeups/exercises/buu/buu%20BSidesSF2018%20blink/" title="buu BSidesSF2018 blink">buu BSidesSF2018 blink</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/CTF/re/daily_wp/July_28/" title="未命名">未命名</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于 CTF">CTF</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/" title="分类于 re">re</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/" title="分类于 writeups">writeups</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/competitions/" title="分类于 competitions">competitions</a> <i class="ic i-angle-right"></i> <a href="/categories/CTF/re/writeups/competitions/CQCTF2022-Winter/" title="分类于 CQCTF2022-Winter">CQCTF2022-Winter</a></div><span><a href="/CTF/re/writeups/competitions/CQCTF2022-Winter/godeep/" title="godeep">godeep</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/CTF/re/daily_wp/August_13/" title="未命名">未命名</a></span></li></ul></div><div><h2>最新评论</h2><ul class="leancloud-recent-comment"></ul></div></div><div class="status"><div class="copyright">&copy; 2010 – <span itemprop="copyrightYear">2023</span> <span class="with-love"><i class="ic i-sakura rotate"></i> </span><span class="author" itemprop="copyrightHolder">0xD009 @ Working on it...</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i> </span><span title="站点总字数">123k 字</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="ic i-coffee"></i> </span><span title="站点阅读时长">1:52</span></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL={path:"CTF/re/daily_wp/July_25/",favicon:{show:"（●´3｀●）やれやれだぜ",hide:"(´Д｀)大変だ！"},search:{placeholder:"文章搜索",empty:"关于 「 ${query} 」，什么也没搜到",stats:"${time} ms 内找到 ${hits} 条结果"},valine:!0,fancybox:!0,copyright:'复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',ignores:[function(e){return e.includes("#")},function(e){return new RegExp(LOCAL.path+"$").test(e)}]}</script><script src="https://cdn.polyfill.io/v2/polyfill.js"></script><script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script><script src="/js/app.js?v=0.2.5"></script></body></html><!-- rebuild by hrmmi -->
