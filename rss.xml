@@ -27,7 +27,7 @@
             <category term="unity" scheme="https://0xd009.github.io/tags/unity/" />
             <category term="Cheat-Engine" scheme="https://0xd009.github.io/tags/Cheat-Engine/" />
             <pubDate>Thu, 22 Dec 2022 23:37:10 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{She_P1ay_Black_Hole_Very_Wel1!LOL!XD!}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{She_P1ay_Black_Hole_Very_Wel1!LOL!XD!}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;姬霓太美鬼畜游戏，DES 加密，unity 中的字符常量一般不存在于.dll 文件中，而且是以 utf-16（Unicode）的格式，即每个字符后面接一个 \x00，一开始以为 key 是 4 位的，实际上是还在他们之间插了 \x00 形成了 8 位 key&lt;/p&gt;
 &lt;p&gt;动调的时候提示模块未被加载，好奇怪&lt;/p&gt;
 &lt;p&gt;最后虽然解出了假 flag，然后去看别人 wp 发现了 Cheat Engine 这个工具，用于修改进程中的内存，还可以查看反汇编&lt;/p&gt;
@@ -45,7 +45,7 @@
             <category term="python" scheme="https://0xd009.github.io/tags/python/" />
             <category term="vm" scheme="https://0xd009.github.io/tags/vm/" />
             <pubDate>Thu, 22 Dec 2022 23:35:23 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{ {this_must_be_the_best_encryption_method_evr_henceforth_this_is_the_new_Advanced_Encryption_Standard_anyways_i_dont_really_have_a_good_vid_but_i_really_enjoy_this_song_i_hope_you_will_enjoy_it_aswell!_youtube.com/watch?v=E5yFcdPAGv0} }&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{ {this_must_be_the_best_encryption_method_evr_henceforth_this_is_the_new_Advanced_Encryption_Standard_anyways_i_dont_really_have_a_good_vid_but_i_really_enjoy_this_song_i_hope_you_will_enjoy_it_aswell!_youtube.com/watch?v=E5yFcdPAGv0} }&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;/CTF/re/writeups/exercises/buu/buu%20watevrCTF2019%20Repyc/../Python%E9%80%86%E5%90%91&#34;&gt;Python 逆向&lt;/a&gt;&lt;br /&gt;
  python 虚拟机&lt;br /&gt;
 看代码就明白了，这里由于主页的框架不支持韩文，不能放出来了&lt;/p&gt;
@@ -65,7 +65,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="bin-file" scheme="https://0xd009.github.io/tags/bin-file/" />
             <pubDate>Thu, 22 Dec 2022 23:34:32 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{Flag_8i7244980f}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{Flag_8i7244980f}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;用 wsl 的 file 指令查到是 PE32＋文件，改后缀，拖进 IDA 之后发现大量赋值，只 scan 一个 int，输出一些东西，没有后续逻辑，极有可能输出的就是 flag，这种情况爆破就好了&lt;/p&gt;
  ]]></description>
         </item>
@@ -80,7 +80,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="ollvm" scheme="https://0xd009.github.io/tags/ollvm/" />
             <pubDate>Thu, 22 Dec 2022 23:34:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{mY-CurR1ed_Fns}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{mY-CurR1ed_Fns}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;其实并不很难，先去掉混淆，然后看&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20SCTF2019%20hardCpp/../buu%20SCTF2019%20hardCpp/image-20221222225627303.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;循环地干同一件事&lt;/p&gt;
@@ -100,7 +100,7 @@
             <category term="AES" scheme="https://0xd009.github.io/tags/AES/" />
             <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
             <pubDate>Thu, 22 Dec 2022 23:32:46 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{Ae3_C8c_I28_pKcs79ad4}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{Ae3_C8c_I28_pKcs79ad4}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;用 IDA 的 findcrypt 插件找到 AES 和 base64 特征，找到 key 是这样：&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20SCTF2019%20crackme/../buu%20SCTF2019%20crackme/image-20221222225525844.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;这里是做了拓展 key 操作&lt;/p&gt;
@@ -123,7 +123,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="花指令" scheme="https://0xd009.github.io/tags/Junk-Code/" />
             <pubDate>Thu, 22 Dec 2022 23:32:17 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{a_3a2y_re_for_test}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{a_3a2y_re_for_test}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;本题主要考察&lt;a href=&#34;/CTF/re/writeups/exercises/buu/buu%20MRCTF2020%20Shit/../../../../learning/notes/%E8%8A%B1%E6%8C%87%E4%BB%A4&#34;&gt;花指令&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;整个程序只有只有一种花指令：&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20MRCTF2020%20Shit/../buu%20MRCTF2020%20Shit/image-20221222225405148.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -147,7 +147,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="MD5" scheme="https://0xd009.github.io/tags/MD5/" />
             <pubDate>Thu, 22 Dec 2022 23:31:11 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{4367FB5F42C6E46B2AF79BF409FB84D3}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{4367FB5F42C6E46B2AF79BF409FB84D3}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;部分逻辑如下：&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20MRCTF2020%20EasyCpp/../buu%20MRCTF2020%20EasyCpp/image-20221222225138639.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;事实上，对于 C&lt;ins&gt; 的逆向，看类名和方法名（不知道是不是叫这个）来分析是比较靠谱的，因为 C&lt;/ins&gt; 中的类本质是结构体，比较复杂，用动调跟的话也是一头雾水&lt;/p&gt;
@@ -176,7 +176,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="RSA" scheme="https://0xd009.github.io/tags/RSA/" />
             <pubDate>Thu, 22 Dec 2022 23:30:21 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{274964845CCC8AAA8A0CD62B0971A23954F741240EEDD43A02F79DA2B7372D68C80C}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{274964845CCC8AAA8A0CD62B0971A23954F741240EEDD43A02F79DA2B7372D68C80C}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;这是很难的一道题，实际上系看雪 CTF2016&lt;/p&gt;
 &lt;p&gt;参考一下 wp：&lt;br /&gt;
 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2Mjk2OTA1L2FydGljbGUvZGV0YWlscy8xMTYzODI2NTA=&#34;&gt;https://blog.csdn.net/m0_46296905/article/details/116382650&lt;/span&gt;&lt;br /&gt;
@@ -207,7 +207,7 @@
             <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
             <category term="MFC" scheme="https://0xd009.github.io/tags/MFC/" />
             <pubDate>Thu, 22 Dec 2022 23:29:13 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{thIs_Is_real_kEy_hahaaa}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{thIs_Is_real_kEy_hahaaa}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;比较困难，与 MFC 框架有关，wp 都提到了 xspy 工具，然而从 github 上下载下来只有源码，编译非常困难，搜了半天才发现一个编译好的版本，在 CSDN 上收费，然后就发现了免费下载 CSDN 文件的 “WATERLIKE 文档共享助手 “，就算是买也只要六毛钱，总是明天再干吧&lt;/p&gt;
 &lt;p&gt;然后是发送消息的问题，用 C 程序发不了，不知道为什么找不到句柄，用了 “彗星小助手”，非常舒服，然后解 DES，key 用前 8 位就行&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20HDCTF%20MFC/../buu%20HDCTF%20MFC/image-20221222225045621.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -222,13 +222,13 @@
             <category term="writeups" scheme="https://0xd009.github.io/categories/CTF/re/writeups/" />
             <category term="exercises" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/" />
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
-            <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
-            <category term="MD5" scheme="https://0xd009.github.io/tags/MD5/" />
             <category term="golang" scheme="https://0xd009.github.io/tags/golang/" />
+            <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
             <category term="SHA256" scheme="https://0xd009.github.io/tags/SHA256/" />
             <category term="SHA512" scheme="https://0xd009.github.io/tags/SHA512/" />
+            <category term="MD5" scheme="https://0xd009.github.io/tags/MD5/" />
             <pubDate>Thu, 22 Dec 2022 23:27:06 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;GKCTF{87f645e9-b628-412f-9d7a-e402f20af940}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;GKCTF{87f645e9-b628-412f-9d7a-e402f20af940}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;开始并没有注意到这是 go 题，瞄了一眼 wp 才看出来&lt;/p&gt;
 &lt;p&gt;用 golanghelper 跑出来的内容差强人意&lt;br /&gt;
 同时它正常的使用顺序应该是&lt;br /&gt;
@@ -261,7 +261,7 @@
             <category term="base64" scheme="https://0xd009.github.io/tags/base64/" />
             <category term="pwn" scheme="https://0xd009.github.io/tags/pwn/" />
             <pubDate>Thu, 22 Dec 2022 23:24:45 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{Re_1s_So0_funny!=#@a1s0_pWn}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{Re_1s_So0_funny!=#@a1s0_pWn}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;事实上本题是一道 pwn 题，利用栈溢出跳转到隐藏函数的地址即可，最后还解了一个 base64&lt;/p&gt;
  ]]></description>
         </item>
@@ -276,7 +276,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="CSharp" scheme="https://0xd009.github.io/tags/CSharp/" />
             <pubDate>Thu, 22 Dec 2022 23:24:03 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{Kitteh_save_galixy@flare-on.com}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{Kitteh_save_galixy@flare-on.com}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Main&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20FlareOn6%20MemecatBattlestation/../buu%20FlareOn6%20MemecatBattlestation/image-20221222224839396.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Stage1Form&lt;br /&gt;
@@ -299,7 +299,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="smc" scheme="https://0xd009.github.io/tags/smc/" />
             <pubDate>Thu, 22 Dec 2022 23:23:09 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{et_tu_brute_force@flare-on.com}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{et_tu_brute_force@flare-on.com}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20FlareOn4%20geek_to_me/../buu%20FlareOn4%20geek_to_me/image-20221222224821817.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;idapython&lt;/p&gt;
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; idc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;addr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0x40107c&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; i &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;121&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    ida_bytes&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;patch_byte&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;addr &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;idc&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;get_wide_byte&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;addr &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;^&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;162&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;需要爆破，选择 linux 下用 pwntools，用了都说好&lt;/p&gt;
@@ -319,7 +319,7 @@
             <category term="web" scheme="https://0xd009.github.io/tags/web/" />
             <category term="php" scheme="https://0xd009.github.io/tags/php/" />
             <pubDate>Thu, 22 Dec 2022 23:22:31 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{a11.that.java5crap@flare-on.com}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{a11.that.java5crap@flare-on.com}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;直接看 png，不过其实在 html 里也能找到 png 的痕迹&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20FlareOn1%20javascrap/../buu%20FlareOn1%20javascrap/image-20221222224759261.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;明显的隐写 php 代码&lt;/p&gt;
@@ -340,7 +340,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="pwn" scheme="https://0xd009.github.io/tags/pwn/" />
             <pubDate>Thu, 22 Dec 2022 23:21:36 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{8cda1bdba8b7b68b68a8b71bdb8cda}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{8cda1bdba8b7b68b68a8b71bdb8cda}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;这又是一道 pwn 题，感觉没什么好说的&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20DigtheWay/../buu%20DigtheWay/image-20221222224626558.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;三个函数形成虚函数表 (?)，然后对输入的数据进行操作就行，事实上，这个函数的栈安全性很差，文件有多长就读多长，所以可以栈溢出来操作这三个函数&lt;br /&gt;
@@ -430,7 +430,7 @@
             <category term="Hackergame2022" scheme="https://0xd009.github.io/categories/CTF/re/writeups/competitions/Hackergame2022/" />
             <category term="混子" scheme="https://0xd009.github.io/tags/hunzi/" />
             <pubDate>Thu, 22 Dec 2022 23:15:59 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{THIS_IS_A_SAMPLE}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{THIS_IS_A_SAMPLE}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;混学时选手，正好 800 分&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/competitions/Hackergame2022/Hackergame2022/../Hackergame2022/image-20221222225830178.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;0x1-签到&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#0x1-签到&#34;&gt;#&lt;/a&gt; 0x1 签到&lt;/h2&gt;
@@ -498,7 +498,7 @@
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="init_array" scheme="https://0xd009.github.io/tags/init-array/" />
             <pubDate>Thu, 22 Dec 2022 21:58:06 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{CXX_1s_h4rd3r_f0r_st4t1c_4n4l1sys_wh3n_d3bugg3r_f41ls}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{CXX_1s_h4rd3r_f0r_st4t1c_4n4l1sys_wh3n_d3bugg3r_f41ls}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;这个题太简单了，为什么越到后面就很多这种分不配位的题&lt;/p&gt;
 &lt;p&gt;唯一可以认为是亮点的地方就是在 &lt;code&gt;init_array&lt;/code&gt;  里把密文传了出去，而在主函数里不能直接通过双击找到，但实际上因为文件的数据量很少，很容易就能猜出来&lt;/p&gt;
 &lt;p&gt;然后主函数甚至直接一上来对密文做了修改，一点逆向的意思都没了&lt;/p&gt;
@@ -517,7 +517,7 @@
             <category term="golang" scheme="https://0xd009.github.io/tags/golang/" />
             <category term="z3_solver" scheme="https://0xd009.github.io/tags/z3-solver/" />
             <pubDate>Thu, 22 Dec 2022 21:25:28 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{s4d_chugg4_n01zez}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{s4d_chugg4_n01zez}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;很简单的一道题，是 go 语言逆向，考察多元一次方程组的求解&lt;/p&gt;
 &lt;p&gt;有一些位给出了直接判断，还有一些位用 &lt;code&gt;z3&lt;/code&gt;  来求解即可，下面的脚本有些地方有点乱，但是影响不大&lt;/p&gt;
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; z3 &lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Solver&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;v17 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;ord&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;c&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;v20 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;ord&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;&amp;#123;&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;v15&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v12&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v18&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v19&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v22&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v23&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v24&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v25&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v26&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v27&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v28&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v29&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; v30 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Ints&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;v15 v12 v18 v19 v22 v23 v24 v25 v26 v27 v28 v29 v30&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v12 &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; v19 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;104&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;125&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; v22 &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;40&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v23&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v25 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v22 &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; v23 &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0x73&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; v24&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v26 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v24 &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; v22&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v25 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v26&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v27 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v19 &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; v22&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v15 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v26 &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; v27 &lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;110&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v18 &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v28&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v29 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v20 &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; v27 &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; v29 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v28&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v30 &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; v17 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; v26&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v27 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; v26&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;add&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;v12 &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; v19&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;check&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;model&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
@@ -534,7 +534,7 @@
             <category term="base64" scheme="https://0xd009.github.io/tags/base64/" />
             <category term="question" scheme="https://0xd009.github.io/tags/question/" />
             <pubDate>Thu, 22 Dec 2022 01:28:56 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;flag{E_L4nguag3_1s_K3KeK3_N4Ji4}&lt;/span&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{E_L4nguag3_1s_K3KeK3_N4Ji4}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;纯动调题，跟下面这些函数&lt;br /&gt;
 &lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20De1CTF%20Resign/../buu%20De1CTF%20Resign/image-20221222012803831.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;/CTF/re/writeups/exercises/buu/buu%20De1CTF%20Resign/../buu%20De1CTF%20Resign/image-20221222012817957.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
