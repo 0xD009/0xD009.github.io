@@ -89,8 +89,8 @@
             <category term="writeups" scheme="https://0xd009.github.io/categories/CTF/re/writeups/" />
             <category term="competitions" scheme="https://0xd009.github.io/categories/CTF/re/writeups/competitions/" />
             <category term="LINECTF2023" scheme="https://0xd009.github.io/categories/CTF/re/writeups/competitions/LINECTF2023/" />
-            <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
             <category term="花指令" scheme="https://0xd009.github.io/tags/Junk-Code/" />
+            <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
             <category term="异常处理" scheme="https://0xd009.github.io/tags/except/" />
             <pubDate>Wed, 29 Mar 2023 18:56:17 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;LINECTF{e255CdA25f1A8A634B31458d2eC405B6}&lt;/span&gt;&lt;/p&gt;
@@ -285,8 +285,8 @@ x = 2, y = 8, z = 4
             <category term="writeups" scheme="https://0xd009.github.io/categories/CTF/re/writeups/" />
             <category term="exercises" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/" />
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
-            <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
             <category term="CSharp" scheme="https://0xd009.github.io/tags/CSharp/" />
+            <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
             <category term="unity" scheme="https://0xd009.github.io/tags/unity/" />
             <category term="Cheat-Engine" scheme="https://0xd009.github.io/tags/Cheat-Engine/" />
             <pubDate>Thu, 22 Dec 2022 23:37:10 +0800</pubDate>
@@ -360,8 +360,8 @@ x = 2, y = 8, z = 4
             <category term="writeups" scheme="https://0xd009.github.io/categories/CTF/re/writeups/" />
             <category term="exercises" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/" />
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
-            <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
             <category term="AES" scheme="https://0xd009.github.io/tags/AES/" />
+            <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
             <pubDate>Thu, 22 Dec 2022 23:32:46 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;flag: &lt;span class=&#34;spoiler&#34; title=&#34;你知道的太多了&#34;&gt;flag{Ae3_C8c_I28_pKcs79ad4}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;用 IDA 的 findcrypt 插件找到 AES 和 base64 特征，找到 key 是这样：&lt;br /&gt;
@@ -457,8 +457,8 @@ x = 2, y = 8, z = 4
             <category term="exercises" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/" />
             <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
             <category term="golang" scheme="https://0xd009.github.io/tags/golang/" />
-            <category term="SHA256" scheme="https://0xd009.github.io/tags/SHA256/" />
             <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
+            <category term="SHA256" scheme="https://0xd009.github.io/tags/SHA256/" />
             <category term="SHA512" scheme="https://0xd009.github.io/tags/SHA512/" />
             <category term="MD5" scheme="https://0xd009.github.io/tags/MD5/" />
             <pubDate>Thu, 22 Dec 2022 23:27:06 +0800</pubDate>
