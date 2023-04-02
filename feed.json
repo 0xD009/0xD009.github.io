@@ -268,9 +268,9 @@
                 "writeups",
                 "exercises",
                 "buu",
+                "question",
                 "DES",
-                "MFC",
-                "question"
+                "MFC"
             ]
         },
         {
@@ -304,8 +304,8 @@
                 "writeups",
                 "exercises",
                 "buu",
-                "pwn",
-                "base64"
+                "base64",
+                "pwn"
             ]
         },
         {
