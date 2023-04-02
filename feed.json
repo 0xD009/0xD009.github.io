@@ -66,8 +66,8 @@
                 "competitions",
                 "LINECTF2023",
                 "花指令",
-                "异常处理",
-                "反调试"
+                "反调试",
+                "异常处理"
             ]
         },
         {
@@ -222,8 +222,8 @@
                 "writeups",
                 "exercises",
                 "buu",
-                "反调试",
-                "AES"
+                "AES",
+                "反调试"
             ]
         },
         {
@@ -286,8 +286,8 @@
                 "exercises",
                 "buu",
                 "golang",
-                "SHA256",
                 "DES",
+                "SHA256",
                 "SHA512",
                 "MD5"
             ]
