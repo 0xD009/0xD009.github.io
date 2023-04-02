@@ -104,8 +104,8 @@
         <category term="competitions" scheme="https://0xd009.github.io/categories/CTF/re/writeups/competitions/" />
         <category term="LINECTF2023" scheme="https://0xd009.github.io/categories/CTF/re/writeups/competitions/LINECTF2023/" />
         <category term="花指令" scheme="https://0xd009.github.io/tags/Junk-Code/" />
-        <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
         <category term="异常处理" scheme="https://0xd009.github.io/tags/except/" />
+        <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
         <updated>2023-03-29T10:56:17.000Z</updated>
     </entry>
     <entry>
@@ -368,8 +368,8 @@ x = 2, y = 8, z = 4
         <category term="writeups" scheme="https://0xd009.github.io/categories/CTF/re/writeups/" />
         <category term="exercises" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/" />
         <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
-        <category term="AES" scheme="https://0xd009.github.io/tags/AES/" />
         <category term="反调试" scheme="https://0xd009.github.io/tags/anti-debug/" />
+        <category term="AES" scheme="https://0xd009.github.io/tags/AES/" />
         <updated>2022-12-22T15:32:46.000Z</updated>
     </entry>
     <entry>
@@ -474,8 +474,8 @@ x = 2, y = 8, z = 4
         <category term="exercises" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/" />
         <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
         <category term="golang" scheme="https://0xd009.github.io/tags/golang/" />
-        <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
         <category term="SHA256" scheme="https://0xd009.github.io/tags/SHA256/" />
+        <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
         <category term="SHA512" scheme="https://0xd009.github.io/tags/SHA512/" />
         <category term="MD5" scheme="https://0xd009.github.io/tags/MD5/" />
         <updated>2022-12-22T15:27:06.000Z</updated>
