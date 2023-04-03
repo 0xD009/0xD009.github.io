@@ -500,8 +500,8 @@ x = 2, y = 8, z = 4
         <category term="exercises" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/" />
         <category term="buu" scheme="https://0xd009.github.io/categories/CTF/re/writeups/exercises/buu/" />
         <category term="golang" scheme="https://0xd009.github.io/tags/golang/" />
-        <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
         <category term="SHA256" scheme="https://0xd009.github.io/tags/SHA256/" />
+        <category term="DES" scheme="https://0xd009.github.io/tags/DES/" />
         <category term="SHA512" scheme="https://0xd009.github.io/tags/SHA512/" />
         <category term="MD5" scheme="https://0xd009.github.io/tags/MD5/" />
         <updated>2022-12-22T15:27:06.000Z</updated>

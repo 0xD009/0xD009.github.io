@@ -302,8 +302,8 @@
                 "exercises",
                 "buu",
                 "golang",
-                "DES",
                 "SHA256",
+                "DES",
                 "SHA512",
                 "MD5"
             ]
