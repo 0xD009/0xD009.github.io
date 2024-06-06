@@ -18,10 +18,10 @@ draft: false
 
 ## 主题魔改
 博客修改的主题是 [fuwari](https://github.com/saicaca/fuwari) ，从 demo 可以看出来基本与本站是一个模子里刻出来的：
-![](postassets/image-20240606213636357.png)
+![](基于ASTRO的个人博客配置/image-20240606213636357.png)
 
 但是本站更倾向于使用绿色作为主题色，第一件事情就是把右上角主题色调整的滑动条关闭，同时固定主题色为绿色（hue:160），效果大致如下：
-![](postassets/image-20240606213901109.png)
+![](基于ASTRO的个人博客配置/image-20240606213901109.png)
 
 可以看到在深色模式下原主题的背景包括各组件都做了和主题色的适配处理，整个画面看起来泛绿，和本人的头像相性很差，因此笔者又魔改了配色来协调。
 
@@ -55,7 +55,7 @@ color_set({
 
 ## 博客部署
 
-本站最终部署在 Github Pages 上，利用了 Github Actions ，用到的 workflow(.github/workflow/deploy.yml) 如下：
+本站最终部署在 Github Pages 上，利用了 Github Actions ，用到的 workflow(.github/workflow/deploy.yml) 如下（这里有些问题，看后面补充）：
 ```yaml
 name: Deploy to GitHub Pages
 
@@ -124,3 +124,52 @@ robocopy  D:\obsidian D:\page\src\content\posts\ /MIR /R:0 /W:0 /LOG:SyncLog.txt
 
 ## 总结
 拖了小半年终于把这事给做了，接下来可以多写多总结些东西了，这对于整理思路和所学都是大有裨益的。
+
+## 补充
+就在往 Github 上部署的时候出现了个致命错误，和附件有关，即在远程的时候不能正常引入附件，因为在远程多做了 GPT 加的那些操作，所以才出错的。仔细一看发现 pnpm 相关命令是不需要做的，最后把官方文档里注释掉的那些都解掉注释，然后把包管理器从 pnpm 改为 npm 即可：
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  # 每次推送到 `main` 分支时触发这个“工作流程”
+  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
+  push:
+    branches: [ main ]
+  # 允许你在 GitHub 上的 Actions 标签中手动触发此“工作流程”
+  workflow_dispatch:
+
+# 允许 job 克隆 repo 并创建一个 page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Install, build, and upload your site
+        uses: withastro/action@v2
+        with:
+          path: . # 存储库中 Astro 项目的根位置。（可选）
+          node-version: 20 # 用于构建站点的特定 Node.js 版本，默认为 20。（可选）
+          package-manager: npm@latest # 应使用哪个 Node.js 包管理器来安装依赖项和构建站点。会根据存储库中的 lockfile 自动检测。（可选）
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+```
+
+猜测原因是因为主题引入了 pnpm ，按注释写的，远程根据 lockfile 检测到了 pnpm ，于是做 pnpm ，然后 pnpm 引发了附件相关的错误，所以只需要手动改成 npm 就没问题了。
+所以说还是不能轻信 GPT。
