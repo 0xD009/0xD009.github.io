@@ -5,7 +5,7 @@ description: 搁置了许久的一次博客更新
 tags:
   - 折腾
 category: 无用之用
-draft: true
+draft: false
 ---
 ## 为什么选择ASTRO？
 >[ASTRO](https://astro.build/)是最适合构建像博客、营销网站、电子商务网站这样的**以内容驱动的网站**的 Web 框架。
