@@ -1,0 +1,36 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 202466 19:23:42
+   Source : D:\Working\Obsidian\blogs\
+     Dest : D:\Working\blogpage\0xD009\src\content\posts\
+
+    Files : *.*
+	    
+  Options : *.* /TEE /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+	                   1	D:\Working\Obsidian\blogs\
+	*EXTRA Dir        -1	D:\Working\blogpage\0xD009\src\content\posts\测试\
+	  *EXTRA File 		   28160	image-20240606182113318.png
+	  *EXTRA File 		     175	测试.md
+	    New File  		     331	基于ASTRO的个人博客配置.md100%  
+	  New Dir          1	D:\Working\Obsidian\blogs\基于ASTRO的个人博客配置\
+	    New File  		   36121	image-20240606192246673.png100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         2         1         1         0         0         1
+   Files :         2         2         0         0         0         2
+   Bytes :    35.5 k    35.5 k         0         0         0    27.6 k
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :            18226000 Bytes/sec.
+   Speed :            1042.900 MegaBytes/min.
+   Ended : 202466 19:23:42
+

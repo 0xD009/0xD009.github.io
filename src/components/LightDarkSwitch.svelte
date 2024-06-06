@@ -8,7 +8,7 @@ import {onMount} from "svelte";
 import {AUTO_MODE, DARK_MODE, LIGHT_MODE} from "@constants/constants.ts";
 
 const seq = [LIGHT_MODE, DARK_MODE, AUTO_MODE]
-let mode = AUTO_MODE
+let mode = DARK_MODE
 
 onMount(() => {
     mode = getStoredTheme()
