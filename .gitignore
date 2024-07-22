@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # sync script
 sync.sh
+SyncLog.txt
